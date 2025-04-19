@@ -1,0 +1,29 @@
+- show graphs and use dopamine to your favor
+think about duolingo: it has a streak. each day you dont do a lesson, you have a chance of losing that streak. you want to see the streak go up
+in stuna, everyday will have a lesson streak, and you have to do 20 lessons. the more lessons you get right, the higher the graph for that day will be. the dopamine comes in seeing the graph rise - if you dont do the minimum lessons in a day, the graph will not be high
+
+- discord bot that analyses the questions typed in the right format in a discord channel. it then saves a file (or maybe even opens the website automatically)
+
+- the questions have a format:
+XX:XX emoji (TEST DATE - QX - FIELD) (COMMENT)
+where XX:XX is how long it took to solve the question (you clock it yourself)
+where emoji is either :white_check_mark: (got the question right), :ballot_box_with_check: (got the question partially right, used for questions with multiple items) or :X: (got the question wrong)
+where TEST is the test name such as ENEM or FUVEST
+where DATE is the year of the test (such as 2019)
+where QX is the number of the question (such as Q18)
+where field is what the question is about (such as Cinematics)
+
+an example would be
+05:20 :X: (UNIFESP 2017 - Q12 - Quantidade de Movimento/Energia)
+it has the clock, the emoji, the test, the date, the question number, and the field. comments are optional
+
+you type the questions yourself, you solve them yourself. you just type them in that format in the discord channel, run the command and the bot analyses them for you
+
+- filter questions by field
+
+- automatic study recommendation
+when you open the website, it analyses the fields youve been getting the most questions wrong, and recommends you study them
+
+- graphs should show question relevance
+
+- blue and black color scheme?
