@@ -1,8 +1,3 @@
-#APP ID 1363613086413492355
-#PUBLIC KEY 0797bed8caddd5675d310f06ffae42f0a501e1c6d49e3748a764e33bf40f3ee3
-#https://discord.com/oauth2/authorize?client_id=1363613086413492355
-#536988736
-
 import discord
 import os
 import re
@@ -20,7 +15,8 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 QUESTION_REGEX = re.compile(
-    r"(\d{2}:\d{2})\s([^\s]+)\s\(([^)]+)\)\s?(.*)?"
+    r"(\d{2}:\d{2})\s+([^\s]+)\s+\(([^)]+)\)\s*(.*)?", 
+    re.DOTALL
 )
 
 CSV_FILE = 'questions.csv'
@@ -57,14 +53,14 @@ class discordClient(discord.Client):
 
             await message.add_reaction('💾')
 
-        #print(f'Message from {message.author}: {message.content}')
         await bot.process_commands(message)
+
 
 @bot.command(name='import')
 async def import_questions(ctx, arg=None):
     print('called import')  
     if arg is None:
-        await ctx.send("⚠️ This will delete the current file and reimport all questions. Use `!import all` to reimport everything, `!import 7d` to reimport the last 7 days and `!import 2w` to reimport the last 2 weeks.")
+        await ctx.send("⚠️ This will delete the current file and reimport all questions. Use `!import all` to reimport everything, `!import -7d` to reimport the last 7 days and `!import -2w` to reimport the last 2 weeks.")
         return
     
     time_filter = None
@@ -94,33 +90,63 @@ async def import_questions(ctx, arg=None):
 
     await status_msg.edit(content='📁 File deleted. Reading channel messages...')
     count = 0
-
-    # read channel messages
-    async for message in ctx.channel.history(limit=None, oldest_first=True):
-        if message.author.bot:
-            continue
-        if time_filter and message.created_at < time_filter:
-            continue
-
-        match = QUESTION_REGEX.match(message.content)
-        if match:
-            timestamp, emoji, info_block, comment = match.groups()
-            try:
-                parts = [part.strip() for part in info_block.split('-')]
-                test = parts[0]
-                question_number = parts[1]
-                field = parts[2]
-
-            except:
+    processed = 0
+    
+    # use larger batch size to reduce API calls (discord.py batch size is 100)
+    batch_size = 250
+    csv_rows = []
+    last_message = None 
+    
+    while True:
+        # get a batch of messages
+        messages = []
+        async for message in ctx.channel.history(limit=batch_size, before=last_message):
+            messages.append(message)
+        
+        if not messages:
+            break 
+            
+        processed += len(messages)
+        await status_msg.edit(content=f"⏳ Processing... ({processed} messages scanned, {count} questions found)")
+        
+        # process message batch
+        for message in messages:
+            if message.author.bot:
                 continue
-
+                
+            if time_filter and message.created_at < time_filter:
+                continue
+                
+            match = QUESTION_REGEX.match(message.content)
+            if match:
+                timestamp, emoji, info_block, comment = match.groups()
+                try:
+                    parts = [part.strip() for part in info_block.split('-')]
+                    test = parts[0]
+                    question_number = parts[1]
+                    field = parts[2]
+                except:
+                    continue
+                    
+                csv_rows.append([timestamp, emoji, test, question_number, field, comment])
+                count += 1
+        
+        # write batch to CSV
+        if len(csv_rows) >= 100:
             with open(CSV_FILE, mode='a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow([timestamp, emoji, test, question_number, field, comment])
-            count += 1
-
-        await status_msg.edit(content=f"⏳ Succesfully imported {count} questions.")
-
-    await status_msg.edit(content=f"✅ Succesfully imported {count} questions.")
+                writer.writerows(csv_rows)
+            csv_rows = [] # clear for next batch
+            
+        if messages:
+            last_message = messages[-1]
+    
+    # write remaining rows
+    if csv_rows:
+        with open(CSV_FILE, mode='a', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerows(csv_rows)
+    
+    await status_msg.edit(content=f"✅ Successfully imported {count} questions from {processed} messages.")
 
 bot.run(TOKEN)
