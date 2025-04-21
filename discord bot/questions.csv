@@ -1,0 +1,507 @@
+timestamp,emoji,test,question_number,field,comment
+03:40,✅,FMABC 2022,Q71,Matemática Básica,
+03:40,❌,FMABC 2022,Q72,Geometria,"dica pra vestibulares: apareceu circunferência tangenciando retas, quase sempre você vai precisar desenhar esse raio e marcar o ângulo de 90 graus"
+05:20,✅,FMABC 2022,Q74,Matemática Básica,
+03:45,❌,FMABC 2022,Q76,Combinatória,
+03:43,✅,FMABC 2022,Q75,Geometria,
+09:32,✅,FMABC,Q73,Matemática Básica,
+03:55,❌,FMABC 2022,Q77,Geometria,"área de hexagono é sempre chata, mas é bom lembrar que é 6x a área do triângulo equilátero, ou
+área do hexagono = (3a²*√3)/2"
+03:38,✅,FMABC 2022,Q78,Matemática Básica/Medianas,
+07:21,❌,FMABC 2022,Q79,Funções,
+06:09,❌,FMABC 2022,Q80,Progressões,"(falta de atenção, não li o enunciado direito)"
+00:59,✅,UNICAMP 2017,Q14,Matemática Básica,
+04:59,✅,UNICAMP 2017,Q17,Álgebra,
+12:04,❌,UNICAMP 2017,Q25,Trigonometria/Progressões,outra relação da trigonometria: tan²(x) + 1 = sec²(x)
+06:00,❌,UNICAMP 2017,Q19,Geometria/Funções/Circunferências,"completar quadrado é somar metade da incógnita sem expoente e colocar ao quadrado
+x² - x - (1/2)²
+
+e pra transformar um quadrado do trinômio perfeito em um termo só, pega o x, o termo sozinho e tira ao quadrado, e coloca tudo isso ao quadrado. o sinal é o mesmo sinal do X sem expoente
+x² - x + (1/2)²
+( x - (1/2) )²"
+00:55,❌,UNICAMP 2017,Q22,Álgebra/Funções,"demonstração do teorema do resto, bem legal, muito simples e não tinha pensado não sei como"
+06:35,✅,UNICAMP 2017,Q26,Trigonometria,
+00:36,❌,2° POLIEDDRO 2024,Q55,Fenômenos Terrestres,
+00:29,✅,5° POLIEDRO 2024,Q08,Interpretação de Texto,
+01:08,❌,1° SAS 2025,Q122,Separação de Misturas,
+02:56,❌,UNICAMP 2017,Q18,Funções,
+04:37,❌,UNICAMP 2017,Q23,Funções,
+00:48,✅,UNICAMP 2017,Q15,Combinatória,
+01:08,✅,UNICAMP 2017,Q24,Geometria,
+04:25,✅,UNICAMP 2017,Q20,Matrizes,
+01:04,❌,UNICAMP 2017,Q27,Citologia/Proporções,(multi disciplina)
+05:15,✅,UNICAMP 2017,Q21,Matemática Básica,
+01:18,✅,UNICAMP 2017,Q28,Interpretação de Texto,
+01:30,✅,UNISA 2023,Q15,Funções,
+02:01,✅,UNISA 2023,Q16,Logaritmos/Álgebra,
+00:38,❌,UNISA 2023,Q17,Combinatória,
+05:04,✅,UNESP 2023,Q77,Cinemática,
+04:46,❌,UNICAMP 2017,Q16,Funções,"(falta de atenção, errei na conta facil)"
+01:00,✅,UNISA 2023,Q19,Trigonometria,
+02:14,✅,UNISA 2023,Q18,Geometria,
+02:20,✅,UNESP 2023,Q76,Análise de Gráfico,
+01:55,❌,UNESP 2023,Q79,Energia/Análise de Gráfico,(analisei o grafico errado)
+01:24,✅,UNESP 2023,Q80,Óptica/Funções Orgânicas,
+06:11,❌,UNESP 2023,Q81,Ondas,
+03:33,❌,UNESP 2023,Q84,Geometria,
+01:57,✅,UNESP 2023,Q83,Matemática Básica,
+02:21,✅,UNESP 2023,Q82,Elétrica,
+02:57,✅,UNESP 2023,Q78,Quantidade de Movimento,
+04:10,✅,UNESP 2023,Q86,Geometria,
+02:44,✅,UNESP 2023,Q88,Análise de Gráfico,
+06:00,❌,UNESP 2023,Q87,Trigonometria/Cinemática,"ângulos em circunferência: um ângulo escrito é metade do que ele enxerga
+o angulo PQR enxerga 180 graus, então ele vale 90 graus. por isso, já dá pra deduzir que é um triângulo retângulo"
+06:07,✅,UNESP 2023,Q90,Combinatória,
+03:43,✅,UNESP 2023,Q89,Geometria,
+01:23,❌,UNESP 2023,Q85,Matemática Básica,
+02:30,☑️,UNIFESP 2017,Q17,Geometria,(Dissertativa A e B)
+06:35,❌,UNIFESP 2017,Q18,Combinatória,(Dissertativa A e B)
+15:24,✅,UNIFESP 2017,Q19,Geometria,(Dissertativa A e B) (gostei dessa questão)
+05:20,❌,UNIFESP 2017,Q12,Quantidade de Movimento/Energia,(Dissertativa A e B)
+05:31,☑️,UNIFESP 2017,Q14,Óptica,"(Dissertativa A e B)
+
+o ângulo externo é igual a soma dos internos opostos"
+07:11,☑️,UNIFESP 2017,Q15,Calorimetria/Elétrica,(Dissertativa A e B)
+07:47,☑️,UNIFESP 2017,Q16,Matemática Básica,(Dissertativa A e B)
+01:03,❌,FUVEST 2023,Q58,Matemática Básica,(falta de atenção)
+02:16,✅,FUVEST 2023,Q86,Geometria,
+07:35,❌,FUVEST 2023,Q84,Combinatória,
+03:59,✅,FUVEST 2023,Q22,Progressões,
+01:00,✅,FUVEST 2023,Q88,Matemática Básica,
+07:35,❌,FUVEST 2023,Q24,Matemática Básica,
+02:31,❌,FUVEST 2023,Q89,Geometria/Funções,
+05:22,✅,FUVEST 2023,Q90,Matemática Básica,
+03:13,❌,PUC,Q00,Funções,
+02:41,✅,UERJ 2023,Q2,Matemática Básica,
+04:59,❌,UERJ 2023,Q23,Progressões,a soma dos n primeiros termos de uma PG é a1*(1-q^n)/1-q)
+00:33,✅,UERJ 2023,Q35,Óptica,
+02:10,❌,UERJ 2023,Q22,Geometria,
+00:38,✅,UERJ 2023,Q33,Escalas,
+05:22,✅,UERJ 2023,Q20,Trigonometria,
+00:55,✅,UERJ 2023,Q37,Elétrica,
+00:51,✅,UERJ 2023,Q36,Cinemática,
+01:49,✅,UERJ 2023,Q19,Forças,
+00:20,✅,3° POLIEDRO 2023,Q23,Funções da Linguagem,
+00:59,✅,UERJ 2023,Q38,Forças,
+02:05,✅,UERJ 2023,Q39,Energia,
+01:49,✅,UERJ 2023,Q34,Eletroestática,
+00:53,❌,ENEM,Q114,Reações Químicas,
+00:14,✅,5° BERNOULLI 2024,Q102,Reações Químicas,
+00:17,✅,2° BERNOULLI 2023,Q00,Química,
+04:34,✅,IFCE 2014,Q35,Matemática Básica,
+01:01,✅,ENEM,Q00,Interações Moleculares,
+00:47,❌,1° SAS 2025,Q109,Citologia,ribossomo traduz o RNA mensageiro
+00:36,✅,5° POLIEDRO 2023,Q100,Doenças,
+00:50,❌,ENEM 2024,Q99,Física,
+00:17,✅,ENEM 2024,Q65,Fluxos Migratórios,
+11:28,❌,UERJ 2023,Q24,Geometria,
+02:18,✅,UERJ 2022,Q39,Torque,
+00:51,✅,UERJ 2022,Q37,Forças,
+00:55,✅,UERJ 2022,Q36,Óptica,lembrar que na fórmula de 1/f o sinal é negativo se a lente for divergente
+01:11,❌,UERJ 2022,Q33,Óptica,(questão mal escrita)
+03:44,✅,UERJ 2022,Q35,Termodinâmica,
+06:51,✅,UERJ 2022,Q34,Calorimetria,
+08:18,❌,UERJ 2022,Q24,Matemática Básica,
+04:49,✅,UERJ 2022,Q21,Matemática Básica,
+04:38,✅,UERJ 2022,Q22,Inequações,
+09:31,❌,UERJ 2022,Q32,Trigonometria,
+06:05,✅,UERJ 2022,Q25,Combinatória,
+01:12,✅,UERJ 2022,Q20,Matemática Básica,
+08:16,❌,UERJ 2022,Q19,Matemática Básica,
+00:34,✅,UERJ 2022,Q4,Quantidade de Movimento,
+00:51,✅,UERJ 2022,Q38,Elétrica,
+04:11,✅,UFU 2020,Q1,Calorimetria,"(Dissertativa A, B e C)"
+03:36,☑️,UFU 2020,Q2,Forças,"(Dissertativa A, B e C)"
+01:40,❌,UFU 2020,Q17,Forças,
+02:20,✅,UFU 2020,Q18,Energia,
+00:55,✅,UFU 2020,Q19,Cinemática,
+00:59,❌,UFU 2020,Q20,Astrofísica,
+00:17,✅,UFU 2020,Q21,Ondas,
+01:11,✅,UFU 2020,Q22,Elétrica,
+01:48,❌,UFU 2020,Q23,Óptica,"quando a luz se encontra do lado errado, a imagem é virtual"
+01:18,✅,UFU 2020,Q24,Eletromagnetismo,
+00:42,❌,FUVEST 2008,Q30,Matemática Básica,
+03:08,✅,FUVEST 2008,Q31,Matemática Básica,
+06:09,❌,FUVEST 2023,Q13,Termodinâmica,
+06:20,❌,FUVEST 2008,Q33,Progressões,
+05:54,❌,FUVEST 2008,Q37,Geometria,
+05:00,✅,FUVEST 2008,Q32,Trigonometria,
+05:58,❌,FUVEST 2008,Q36,Geometria,(não entendi porque k²)
+03:19,✅,FUVEST 2008,Q35,Álgebra,
+09:36,❌,FUVEST 2008,Q34,Álgebra,
+07:12,❌,FUVEST 2008,Q38,Combinatória,(não entendi porque dividir por 2)
+10:47,✅,FUVEST 2008,Q39,Geometria,
+10:22,❌,FUVEST 2007,Q30,Matemática Básica,
+03:24,✅,FUVEST 2007,Q31,Matemática Básica,
+01:04,❌,FUVEST 2007,Q34,Álgebra,"soma e produto:
+S = -b/a
+P = c/a"
+01:40,❌,FUVEST 2007,Q33,Geometria,(falta de atenção)
+06:19,❌,FUVEST 2007,Q32,Geometria,
+04:24,❌,FUVEST 2007,Q36,Progressões/Álgebra,
+15:52,❌,FUVEST 2007,Q37,Geometria/Trigonometria,(não entendi)
+06:22,❌,FUVEST 2007,Q38,Combinatória,
+04:46,✅,FUVEST 2007,Q39,Geometria,
+01:22,✅,UFU 2021/2,Q18,Termodinâmica,
+01:35,✅,UFU 2022/2,Q17,Termodinâmica,
+01:00,✅,UFU 2022/2,Q21,Óptica,
+01:25,❌,UFU 2022/2,Q19,Microondas?,
+00:37,✅,UFU 2022/2,Q18,Ondas,
+01:25,✅,UFU 2021/2,Q19,Ondas,
+01:11,✅,UFU 2021/2,Q22,Termodinâmica,
+01:07,✅,UFU 2021/2,Q17,Quantidade de Movimento,
+03:12,❌,UFU 2022/2,Q22,Calorimetria,(falta de atenção)
+01:21,❌,UFU 2021/2,Q23,Termodinâmica/Forças,
+02:23,✅,UFU 2022/2,Q24,Empuxo,
+00:09,✅,UFU 2022/2,Q23,Termodinâmica,
+00:11,✅,UFU 2021/2,Q21,Termodinâmica,
+02:25,✅,UFU 2021/2,Q24,Eletromagnetismo,
+09:19,❌,UFU 2021/2,Q20,Elétrica,
+02:52,❌,UFU 2022/2,Q69,Geometria,
+06:45,❌,UFU 2022/2,Q66,Funções,
+06:09,❌,UFU 2022/2,Q17,Calorimetria,
+04:15,✅,UFU 2022/2,Q22,Pêndulos,
+00:56,✅,UFU 2022/2,Q21,Forças,
+10:32,❌,ITA,Q82,Geometria,"formula muito rara mas da pra usar em algum lugar, util pra achar raio de circunferencia"
+03:50,❌,UNESP 2008,Q5,Geometria,
+09:15,❌,FUVEST 2023/2,Q2,Geometria/Funções,"(Dissertativa A, B e C0"
+12:33,☑️,FUVEST 2023/2,Q4,Geometria/Progressões Geométricas,"(Dissertativa A, B e C)
+
+uma reta perpendicular à outra tem o coeficiente angular oposto e inverso (x => -1/x)"
+03:29,❌,FUVEST 2023/2,Q4,Elétrica,"(Dissertativa A, B e C)
+
+
+lembrar que a corrente é inversamente proporcional à resistência quando está em paralelo (quanto maior a resistência, menor a corrente que passa por ele)"
+07:45,☑️,FUVEST 2023/2,Q2,Óptica,"(Dissertativa A, B e C)"
+04:52,✅,FUVEST 2023/2,Q1,Cinemática/Elétrica,"(Dissertativa A, B e C)"
+04:50,✅,FUVEST 2023/2,Q3,Densidade,"(Dissertativa A, B e C)"
+13:52,✅,FUVEST 2023/2,Q1,Funções,"(Dissertativa A, B e C)"
+04:16,☑️,FUVEST 2023/2,Q5,Geometria,"(Dissertativa A, B e C)
+
+se inverter em fração desigualdade, troca as desigualdades de lugar"
+01:23,✅,ENEM 2021,Q109,Elétrica,
+01:17,✅,FGV,Q87,Termodinâmica,
+01:43,✅,UFES,Q4,Cinemática/Pêndulos,
+01:11,✅,UFU 2022/2,Q23,Cinemática,
+02:17,✅,UFU 2022/2,Q68,Radioatividade,
+01:20,✅,UFU 2022/2,Q18,Energia,
+01:16,✅,UFU 2022/2,Q18,Ondas,
+01:38,✅,UFU 2022/2,Q24,Ondas,
+00:19,✅,UFU 2022/2,Q20,Eletroestática,
+01:34,❌,ENEM 2016 PPL,Q48,Empuxo,"E = dvg
+ou
+E = peso da agua deslocada (agua empurrando de volta)"
+02:18,❌,FGV,Q83,Termodinâmica,
+02:03,✅,UFRGS 2015,Q83,Termodinâmica,
+04:17,❌,UNICAMP 2017,Q79,Termodinâmica,
+07:55,❌,ENEM 2019,Q91,Elétrica,
+10:35,✅,FGV 2012,Q89,Inequações,dividir por um número negativo em inequações muda o sinal da desigualdade
+06:16,✅,FATEC,Q88,Cinemática,
+06:25,❌,MACK SP,Q87,Funções,delta > 0 significa duas raízes reais
+02:59,✅,VUNESP 2012,Q82,Cinemática,
+10:16,✅,ALBERT EINSTEIN 2024,Q3,Cinemática,(Dissertativa A e B)
+01:47,❌,ALBERT EINSTEIN 2024,Q4,Matemática Básica,(Dissertativa A e B)
+02:20,❌,ALBERT EINSTEIN 2024,Q41,Trigonometria,
+01:43,✅,ALBERT EINSTEIN 2024,Q40,Eletroestática,
+05:50,✅,ALBERT EINSTEIN 2024,Q45,Geometria,
+03:39,✅,ALBERT EINSTEIN 2024,Q46,Combinatória,
+04:30,✅,ALBERT EINSTEIN 2024,Q47,Combinatória,
+03:25,✅,ALBERT EINSTEIN 2024,Q42,Geometria,
+03:05,❌,ALBERT EINSTEIN 2024,Q39,Óptica,
+07:25,❌,ALBERT EINSTEIN 2024,Q38,Termodinâmica,
+04:06,✅,ALBERT EINSTEIN 2024,Q36,Cinemática/Rotações,
+05:24,❌,ALBERT EINSTEIN 2024,Q43,Trigonometria,
+06:03,✅,ALBERT EINSTEIN 2024,Q20,Matemática Básica,
+01:32,❌,ALBERT EINSTEIN 2024,Q49,Matemática Básica,
+07:24,❌,ALBERT EINSTEIN 2024,Q50,Matemática Básica,
+12:43,✅,ALBERT EINSTEIN 2024,Q48,Geometria,
+08:29,✅,SANTA CASA 2024,Q75,Funções,
+01:34,❌,SANTA CASA 2024,Q65,Calorimetria,(falta de atenção)
+01:10,✅,SANTA CASA 2024,Q63,Energia,
+05:46,✅,SANTA CASA 2024,Q62,Cinemática,
+00:53,✅,SANTA CASA 2024,Q61,Análise Dimensional,
+02:39,❌,SANTA CASA 2024,Q66,Termodinâmica,
+06:57,❌,SANTA CASA 2024,Q67,Óptica,(reflexão total)
+00:33,✅,SANTA CASA 2024,Q68,Ondas,
+04:29,✅,SANTA CASA 2024,Q69,Elétrica,
+13:00,❌,SANTA CASA 2024,Q73,Combinatória,
+07:17,❌,SANTA CASA 2024,Q72,Matemática Básica,
+02:20,✅,SANTA CASA 2024,Q71,Progressões,
+00:48,✅,SANTA CASA 2024,Q70,Eletromagnetismo/Eletricidade,
+06:12,✅,SANTA CASA 2024,Q74,Funções/Geometria,
+11:33,✅,SANTA CASA 2024,Q76,Geometria,
+05:16,❌,SANTA CASA 2024,Q77,Geometria,
+05:50,❌,SANTA CASA 2024,Q78,Geometria,(falta de atenção)
+02:10,❌,SANTA CASA 2024,Q80,Matemática Básica,
+00:58,✅,SANTA CASA 2024,Q79,Geometria,
+01:32,✅,UNICAMP 2024,Q28,Termodinâmica,
+00:59,✅,UNICAMP 2024,Q30,Forças,
+02:10,✅,UNICAMP 2024,Q29,Ondas,
+08:33,❌,UNICAMP 2024,Q17,Funções,
+01:35,✅,UNICAMP 2024,Q14,Combinatória,
+15:23,❌,UNICAMP 2024,Q10,Funções,"**lei de galileu** pode ajudar quando tiver parábola
+lei de galileu: imagina que tem uma parábola, e você pega o eixo de simetria e separa outras retas que nem ela equidistantes. oque galileu percebeu foi que de uma reta pra outra, o valor da função cai o triplo, depois quintuplo, depois 7... 
+uma PA de razão 2 ou ""cai em valores ímpares""
+
+e pela equação do vértice da parábola Vx = -b/2a, se Vx estiver na origem (0), sabemos que b é 0"
+03:12,✅,UNICAMP 2024,Q15,Progressões,
+01:20,✅,UNICAMP 2024,Q32,Forças,
+01:35,✅,UNICAMP 2024,Q08,Lógica/Tabela Verdade,
+05:00,✅,UNICAMP 2024,Q26,Cinemática,
+00:19,❌,UNICAMP 2024,Q12,Funções,
+01:56,❌,UNICAMP 2024,Q27,Energia,a² - b² = (a+b)(a-b)
+02:21,✅,UNICAMP 2024,Q31,Elétrica,
+01:30,✅,UNICAMP 2024,Q16,Geometria,
+07:30,❌,UNICAMP 2024,Q11,Geometria/Inequações,condição de existência de um triângulo é que um lado deve ser menor do que a soma dos outros dois
+01:51,✅,UNICAMP 2024,Q13,Combinatória,
+10:45,❌,FUVEST 1989,Q2,Geometria,"completar o quadrado: soma metade e coloca ao quadrado, vira (y-5)²"
+03:50,✅,UNICAMP 2024,Q09,Sistemas,
+08:35,❌,UNICAMP 2024,Q18,Geometria,
+03:23,❌,FUVEST,Q77,Trigonometria/Cinemática,
+03:38,❌,UFAL 2024,Q84,Funções,
+02:11,❌,ENEM 2020,Q96,Elétrica,
+04:10,✅,ENEM 2021,Q105,Elétrica,
+01:56,✅,UFRGS,Q71,Termodinâmica,
+09:00,☑️,UNICAMP 2024,Q62,Geometria,"(Dissertativa A e B)
+
+lembrar que área de triângulo também é 1/2 ab*sen
+ou metade do módulo do determinante"
+00:34,✅,FUVEST 2024,Q24,Ondas,
+02:26,✅,FUVEST 2024,Q26,Ondas,
+00:50,✅,FUVEST 2024,Q27,Densidade,
+04:31,❌,FUVEST 2024,Q33,Matemática Básica,"(falta de atenção, errei um expoente só)"
+10:31,✅,FUVEST 2024,Q31,Geometria,
+02:00,✅,FUVEST 2024,Q42,Eletromagnetismo,
+01:45,✅,FUVEST 2024,Q48,Geometria,
+00:31,✅,FUVEST 2024,Q55,Eletroestática,
+00:23,✅,FUVEST 2024,Q51,Cinemática,
+01:15,✅,FUVEST 2024,Q50,Cinemática,
+04:56,✅,FUVEST 2024,Q57,Elétrica,
+06:49,✅,FUVEST 2024,Q60,Funções,
+07:21,☑️,UNIFESP 2024 Reapicação,Q18,Geometria,(Dissertativa A e B)
+03:15,✅,UNIFESP 2024 Reaplicação,Q20,Combinatória,(Dissertativa A e B)
+08:10,✅,UNIFESP 2024 Reaplicação,Q19,Funções/Lógica de Programação,(Dissertativa A e B)
+02:40,✅,FUVEST 2024,Q71,Calorimetria,
+06:27,☑️,UNIFESP 2024 Reaplicação,Q16,Matemática Básica,(Dissertativa A e B)
+00:43,❌,FUVEST 2024,Q72,Termodinâmica,
+03:48,❌,FUVEST 2024,Q73,Ondas,
+02:26,❌,FUVEST 2009,Q73,Matemática Básica/Sistemas,
+10:06,❌,FUVEST 2009,Q72,Trigonometria,"fórmula meio obscura da matemática, o ângulo exterior é a meia diferença dos arcos que ele enxerga
+outra fórmula, o ângulo externo de um triângulo é a soma dos ângulos internos opostos"
+11:40,✅,UNIFESP 2024 Reaplicação,Q12,Calorimetria,(Dissertativa A e B)
+08:09,☑️,UNIFESP 2024 Reaplicação,Q14,Ondas,"(Dissertativa A e B)
+
+V = sqrt(T/u) | essa fórmula vem de analise dimensional
+vc pode ver isso com:
+sqrt(ma/m/L)
+=sqrt(maL/m)
+=sqrt(aL)
+=sqrt(m/s²*m)
+= sqrt(m²/s²)
+= m/s"
+07:51,☑️,UNIFESP 2024 Reaplicação,Q13,Óptica,"(Dissertativa A e B)
+
+visualização legal da reflexão total; quando sai de um meio mais refringente pra um meio menos refringente (água pro ar), o raio se afasta cada vez mais da normal. vai chegar uma hora que no limite, esse raio vai praticamente fazer 90 graus com a água (quanto maior a diferença entre os índices, mais vai se afastar/desviar)
+qualquer ângulo **maior** que esse ângulo crítico vai causar uma reflexão total; **o ângulo crítico é o maior ângulo possível pra que ainda tenha refração**
+
+nv = c
+senL = n1/n2 (como seno não pode ser maior que 1, é o menor/maior)"
+05:56,✅,UNIFESP 2024 Reaplicação,Q15,Elétrica,(Dissertativa A e B)
+01:20,✅,FUVEST 2009,Q71,Matemática Básica,
+06:49,❌,FUVEST 2009,Q74,Progressões/Geometria,a² - b² = (a+b)(a-b)
+10:46,❌,FUVEST 2009,Q75,Logaritmos,
+06:10,❌,FUVEST 2009,Q76,Geometria,
+02:11,❌,FUVEST 2009,Q77,Geometria,"a mediatriz contém todos os pontos em que d(P,A) = d(P,B)
+a distância da reta A e B, quando separada pela mediatriz, é sempre a mesma
+bom lembrar de ""mediatriz"" quando tem a palavra ""equilátero"", pode ajudar"
+11:55,✅,FUVEST 2009,Q78,Geometria,
+05:40,❌,FUVEST 2009,Q79,Trigonometria,
+03:39,❌,FUVEST 2009,Q80,Combinatória,(falta de atenção)
+04:49,❌,FUVEST 2009,Q81,Cinemática,"(falta de atenção, quase acertei)"
+05:30,✅,FUVEST 2009,Q85,Pressão,
+03:10,✅,FUVEST 2009,Q84,Calorimetria,
+01:25,✅,FUVEST 2009,Q83,Quantidade de Movimento,
+05:58,❌,FUVEST 2009,Q82,Torque,"sempre lembra que a distância do torque não é até o centro de gravidade, e sim até o ponto de rotação"
+02:11,✅,FUVEST 2009,Q87,Óptica,"**quando a luz sai de um meio MAIS refringente pra um meio MENOS refringente (água pro ar), a luz se afasta do normal**
+a figura mostra como o cérebro acha que a imagem pode ir pra cima, legal"
+01:49,❌,FUVEST 2009,Q88,Eletroestática,
+01:38,❌,FUVEST 2009,Q89,Elétrica,
+02:43,✅,FUVEST 2009,Q90,Eletromagnetismo,"quando você coloca um imã numa espira, ele desacelera porque ele converte energia cinética em força magnética na direção oposta
+dá pra pensar que a espira age como um outro polo norte, repelindo o imã e fazendo ele ir pra trás (ou atraindo e fazendo ele ir pra frente, caso o imã seja afastado da espira. a espira é sempre do contra)"
+11:45,❌,FUVEST 2010,Q71,Matemática Básica,"truques pra calcular rápido/ver fatores comuns
+- multiplicação por 11: separa os algarismos e coloca a soma entre eles; 25*11 = 2(2+5)5 = 275
+- divisões e achar o resultado/múltiplo: vê o último digito do de cima e pensa por quantas vezes dá o algarismo de baixo. por exemplo, 37*259; ""7 vezes quanto termina em 9?"" 7 vezes 7. 37 vezes 7 = 259
+- pro de cima, separar os números também funciona. 37*7 = (30+7)**7"
+11:00,❌,FUVEST 2010,Q72,Geometria,
+08:35,❌,FUVEST 2010,Q72,Geometria,
+05:05,✅,FUVEST 2010,Q73,Logaritmos,
+08:08,❌,FUVEST 2010,Q74,Progressões,(falta de atenção)
+05:40,❌,FUVEST 2010,Q78,Geometria,
+09:46,❌,FUVEST 2010,Q77,Funções,
+12:01,❌,FUVEST 2010,Q76,Trigonometria,"**questão muito boa, dá pra fazer rápido se souber fazer**"
+06:09,❌,FUVEST 2010,Q75,Geometria,área de triângulo também é 1/2 ab*sen(theta)
+03:13,❌,FUVEST 2010,Q79,Combinatória,(falta de atenção)
+06:35,❌,FUVEST 2009,Q86,Análise Dimensional,
+08:33,❌,FUVEST 2012,Q81,Energia,
+01:18,❌,FUVEST 2012,Q69,Combinatória,
+01:35,✅,FUVEST 2010,Q89,Óptica,
+03:57,❌,FUVEST 2012,Q62,Geometria,a soma dos ângulos internos de um polígono é (n-2)*180
+14:15,❌,FUVEST 2012,Q59,Geometria,(refiz do mesmo jeito e acertei)
+05:30,❌,FUVEST 2012,Q58,Matemática Básica/Sistemas,
+04:38,✅,FUVEST 2012,Q84,Óptica,
+03:07,✅,FUVEST 2010,Q86,Calorimetria,
+01:11,❌,FUVEST 2012,Q64,Matrizes,
+00:43,✅,FUVEST 2010,Q85,Quantidade de Movimento,
+00:54,✅,FUVEST 2010,Q90,Eletroestática,
+02:33,❌,FUVEST 2010,Q87,Análise de Gráfico,
+05:33,✅,FUVEST 2012,Q83,Termodinâmica,"(demorei porque tinha uma complexidade de trigonometria mas demorei pra ver o ""aproximadamente"" no enunciado)"
+01:52,✅,FUVEST 2010,Q84,Cinemática,
+07:41,❌,FUVEST 2012,Q82,Quantidade de Movimento/Energia,
+10:08,❌,FUVEST 2012,Q65,Geometria Analítica,
+11:56,✅,FUVEST 2012,Q63,Trigonometria,"(não era dificil, demorei porque comecei com a maneira errada)"
+04:16,✅,FUVEST 2010,Q83,Cinemática,
+12:04,❌,FUVEST 2012,Q66,Combinatória,(falta de atenção/erro de interpretação)
+07:37,❌,FUVEST 2012,Q67,Geometria,
+02:20,❌,FUVEST 2010,Q82,Análise de Gráfico,(falta de atenção)
+01:18,❌,FUVEST 2012,Q85,Calorimetria,
+06:24,✅,FUVEST 2012,Q68,Radioatividade,
+00:39,❌,FUVEST 2019,Q80,Forças,(falta de atenção)
+06:40,❌,FUVEST 2012,Q61,Funções,
+03:09,❌,FUVEST 2010,Q81,Velocidade,
+00:54,✅,FUVEST 2012,Q86,Radioatividade,
+04:15,❌,FUVEST 2012,Q60,Trigonometria,(falta de atenção)
+02:11,❌,FUVEST 2010,Q80,Geometria,
+03:40,✅,FUVEST 2012,Q87,Elétrica,
+04:47,❌,FUVEST 2013,Q20,Ondulatória,(falta de atenção)
+02:55,❌,FUVEST 2013,Q29,Matemática Básica,
+12:14,❌,FUVEST 2013,Q30,Geometria,
+04:11,❌,FUVEST 2013,Q31,Funções/Inequações,"quando fizer uma operação que muda a inequação e tiver log, se o gráfico do log for crescente, mantém o sinal. se for decrescente, troca"
+01:14,❌,FUVEST 2013,Q21,Forças/Pêndulos,
+02:12,✅,FUVEST 2013,Q16,Elétrica,
+01:13,✅,FUVEST 2012,Q89,Eletromagnetismo/Eletroestática,
+01:25,❌,FUVEST 2012,Q27,Matemática Básica,(falta de atenção)
+06:42,✅,FUVEST 2013,Q23,Geometria,
+06:53,❌,FUVEST 2013,Q14,Pressão/Energia/Quantidade de Movimento,(falta de atenção)
+12:34,❌,FUVEST 2013,Q28,Trigonometria/Matrizes,"(falta de atenção - errei por erro de sinal, demorei porque tive que refazer 3 vezes, tinha errado no começo)"
+00:49,❌,FUVEST 2013,Q19,Análise de Gráfico/Energia,(falta de atenção)
+06:17,✅,FUVEST 2013,Q33,Trigonometria/Geometria Plana,
+05:40,✅,FUVEST 2013,Q17,Eletrostática,
+06:48,✅,FUVEST 2013,Q13,Calorimetria,
+05:30,❌,FUVEST 2013,Q32,Análise de Gráfico,
+00:53,❌,FUVEST 2012,Q88,Ondas,(falta de atenção)
+01:22,❌,FUVEST 2013,Q26,Geometria,
+01:29,❌,FUVEST 2013,Q34,Matemática Básica,(falta de atenção)
+04:04,❌,FUVEST 2013,Q22,Quantidade de Movimento,
+02:34,✅,FUVEST 2023,Q90,Matemática Básica,
+02:09,✅,FUVEST 2012,Q90,Forças/Análise de Gráfico,
+01:05,❌,FUVEST 2013,Q18,Óptica,
+07:27,❌,FUVEST 2020,Q76,Trigonometria,
+05:23,❌,FUVEST 2020,Q71,Ondas/Análise de Gráfico/Logaritmo,
+03:40,❌,FUVEST 2020,Q74,Forças,(errei matemática básica)
+02:31,✅,FUVEST 2020,Q79,Pêndulos/Matemática Básica,
+00:44,❌,FUVEST 2019,Q14,Análise de Gráfico,(falta de atenção)
+01:00,✅,FUVEST 2020,Q70,Análise Dimensional,
+03:07,❌,FUVEST 2019,Q13,Pressão,
+01:23,❌,FUVEST 2020,Q77,Eletromagnetismo,
+06:50,✅,FUVEST 2020,Q72,Velocidade,(demorei pq interpretei errado)
+04:34,❌,FUVEST 2020,Q69,Forças,
+03:30,✅,FUVEST 2020,Q75,Elétrica,
+01:57,❌,FUVEST 2019,Q16,Energia,(falta de atenção)
+05:37,✅,FUVEST 2019,Q17,Energia/Velocidade,
+01:22,❌,FUVEST 2019,Q19,Óptica,
+11:22,❌,FUVEST 2019,Q18,Eletroestática,
+02:30,❌,FUVEST 2019,Q20,Elétrica,
+05:55,❌,FUVEST 2019,Q21,Calorimetria,
+05:19,❌,FUVEST 2019,Q23,Óptica,
+01:07,❌,FUVEST 2019,Q15,Velocidade Angular/Rotações,(não entendi)
+04:43,❌,FUVEST 2019,Q22,Termodinâmica/Gases,o trabalho é a área sob o gráfico
+02:12,✅,FUVEST 2018,Q01,Calorimetria/Analise Dimensional,
+03:13,❌,FUVEST 2018,Q02,Óptica,"na formula de 1/f = 1/p + 1/p', o sinal é negativo se a lente for divergente"
+04:54,❌,FUVEST 2018,Q03,Calorimetria,
+02:15,✅,FUVEST 2018,Q05,Ondas,
+12:39,❌,FUVEST 2018,Q06,Velocidade/Quantidade de Movimento,(não adotei um referencial direito/não usei a formula direito)
+02:59,✅,FUVEST 2018,Q04,Velocidade,
+05:00,❌,FUVEST 2018,Q07,Forças/Tração,(acertei pelo motivo errado)
+01:20,✅,FUVEST 2018,Q08,Radioatividade,(quase errei por falta de atenção no enunciado)
+03:47,❌,FUVEST 2018,Q09,Eletromagnetismo,
+01:38,❌,FUVEST 2018,Q10,Elétrica,
+06:15,❌,FUVEST 2018,Q11,Elétrica/Matemática Básica,
+00:33,❌,FUVEST 2017,Q57,Velocidade/Gráfico,"(eu teria acertado, eu interpretei errado, falta de atenção, não li o enunciado)"
+01:11,❌,FUVEST 2017,Q58,Quantidade de Movimento,
+03:53,❌,FUVEST 2017,Q59,Forças,
+07:02,❌,FUVEST 2017,Q60,Energia,
+02:40,❌,FUVEST 2017,Q61,Eletromagnetismo,
+02:20,✅,FUVEST 2017,Q62,Elétrica,
+03:10,❌,FUVEST 2017,Q63,Ondas,
+06:24,❌,FUVEST 2017,Q64,Radioatividade,
+02:05,❌,FUVEST 2017,Q65,Óptica,
+02:02,✅,FUVEST 2017,Q66,Calorimetria,
+02:04,❌,FUVEST 2017,Q67,Eletroestática,"(quase certo, falta de atenção no enunciado)"
+07:30,✅,FUVEST 2015,Q57,Forças/Pressão,
+01:26,❌,FUVEST 2015,Q58,Forças,"(falta de atenção, quase)"
+06:36,❌,FUVEST 2015,Q59,Elétrica,
+01:51,❌,FUVEST 2015,Q60,Óptica,(falta de atenção)
+06:28,❌,FUVEST 2015,Q61,Forças/Analise Dimensional,
+02:26,❌,FUVEST 2015,Q62,Campo Elétrico,
+03:52,❌,FUVEST 2015,Q63,Quantidade de Movimento,
+01:10,❌,FUVEST 2015,Q64,Termodinâmica,
+03:54,❌,FUVEST 2015,Q65,Torque,"pra exercicios de normalmente é só fazer equilibrio. nesse caso o torque do gindaste (distância do pivô até o centro de massa) deveria ser igual o torque do peso (distância do pivô até o peso), pivô sendo o ponto de tombamento, um dos suportes"
+00:56,❌,FUVEST 2015,Q66,Energia,"(praticamente acertei, falta de atenção, não vi o resto das alternativas)"
+02:40,❌,FUVEST 2015,Q67,Ondas/Progressões,
+00:30,✅,FUVEST 2015,Q68,Termodinâmica/História/Revolução Industrial,
+03:16,❌,FUVEST 2007,Q18,Eletromagnetismo,
+02:47,✅,FUVEST 2007,Q10,Velocidade,
+01:04,✅,FUVEST 2007,Q11,Mecânica,
+03:19,❌,FUVEST 2007,Q12,Mecânica,
+04:20,✅,FUVEST 2007,Q13,Calorimetria,
+02:26,✅,FUVEST 2007,Q14,Pressão,
+01:48,✅,FUVEST 2007,Q15,Óptica,
+06:05,✅,FUVEST 2007,Q17,Elétrica,
+01:33,❌,FUVEST 2007,Q19,Radioatividade,
+07:58,❌,UFU 2023/2,Q66,Sistemas,"(errei coisa boba, era pra transformar 3.6666.... em dizima e coloquei 36/10)"
+04:08,❌,FUVEST 2006,Q59,Forças/Máquina de Atwood,
+02:02,❌,FUVEST 2006,Q62,Ondas/Funções,
+00:24,✅,UFU 2023/2,Q17,Efeito Doppler,
+00:00,❌,UFU 2023/2,Q68,Funções/Geometria Analítica,
+01:40,✅,UFU 2023/2,Q21,Eletromagnetismo,
+03:28,❌,UFU 2023/2,Q24,Elétrica,
+04:25,✅,FUVEST 2006,Q60,Elétrica/Analise Dimensional,
+01:31,❌,FUVEST 2006,Q66,Eletromagnetismo,
+00:47,❌,UFU 2023/2,Q19,Termodinâmica/Ciclo de Otto,
+03:30,❌,FUVEST 2006,Q57,Velocidade,
+11:11,❌,UFU 2023/2,Q65,Geometria,(não entendi muito bem)
+03:33,❌,FUVEST 2006,Q63,Força,
+08:00,❌,FUVEST 2006,Q65,Elétrica,
+04:18,❌,UFU 2023/2,Q18,Força,
+03:46,❌,FUVEST 2006,Q61,Pressão,
+04:40,✅,UFU 2023/2,Q72,Funções/Progressões,
+08:40,❌,UFU 2023/2,Q70,Funções,(falta de atenção)
+04:30,✅,FAMERP 2025,Q80,Funções,
+05:53,✅,FAMERP 2025,Q79,Logaritmos,(demorei por falta de atenção)
+06:42,✅,FAMERP 2025,Q78,Progressões,
+04:07,❌,FAMERP 2025,Q77,Geometria,"(falta de atenção, errei a área total do cilindro)"
+03:30,✅,FAMERP 2025,Q76,Logaritmos,
+03:50,✅,FAMERP 2025,Q75,Geometria Analítica,
+01:42,❌,FAMERP 2025,Q74,Trigonometria,
+05:31,❌,FAMERP 2025,Q73,Combinatória,
+05:37,❌,FAMERP 2025,Q72,Sistemas,
+02:46,❌,FAMERP 2025,Q71,Médias,
+01:52,❌,FAMERP 2025,Q70,Óptica,"(tecnicamente acertei, mas não li enunciado direito)"
+01:08,❌,FAMERP 2025,Q69,Eletromagnetismo,"(pensei que a força magnética acelerava... aparentemente não???)
+força magnética não realiza trabalho
+
+isso acontece porque a força magnética é sempre perpendicular à velocidade, ela não tem componente horizontal. imagina uma bolinha indo na horizontal e eu puxando ela com um barbante, sem fazer nenhuma força na horizontal, só na vertical. a bolinha vai continuar andando. numa partícula, ela ""tecnicamente"" tá acelerando, mas como ela muda de direção o módulo não muda
+já na força elétrica ela não precisa ser perpendicular à velocidade, então pode mudar o módulo e a direção da velocidade ao mesmo tempo. a indução eletromagnética é oque vc vê naquelas bolinhas que aceleram muito dentro de espirais"
+03:34,❌,FAMERP 2025,Q68,Elétrica,
+01:47,❌,FAMERP 2025,Q66,Densidade/Gases,00:14 ✅ (FAMERP 2025 - Q67 - Óptica)
+01:00,❌,FAMERP 2025,Q64,Densidade/Empuxo,
+01:49,✅,FAMERP 2025,Q63,Força,
+00:55,✅,FAMERP 2025,Q62,Força,
+01:17,❌,FAMERP 2025,Q60,Cadeias Carbônicas,(falta de atenção)
+02:58,✅,UFU 2023/2,Q71,Diagrama de Venn,
+04:19,❌,UFU 2023/2,Q67,Funções,
+02:14,❌,UFU 2023/2,Q22,Energia,"(errei porque não vi as outras alternativas, marquei direto)"
+00:45,✅,UFU 2023/2,Q20,Óptica,
+00:55,❌,FUVEST 2006,Q58,Densidade,
+03:00,✅,UFU 2023/2,Q69,Combinatória,
+00:32,✅,FUVEST 2006,Q7,Eletromagnetismo,
