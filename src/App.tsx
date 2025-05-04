@@ -1,39 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
+const apiURL = import.meta.env.VITE_API_URL;
 
 function App() {
+    const [data, setData] = useState([{}])
+
+    useEffect(() => {
+        fetch(apiURL + '/questions').then(
+            res => res.json()
+        ).then(
+            data => {
+                setData(data)
+                console.log(data)
+            }
+        )
+    }, [])
+    
     return (
         <div>
-            <Title text="Hello World!"></Title>
-            <CountButton></CountButton>
+            <h1>API test data</h1>
+            {data && data.length > 0 ? (
+                <div>
+                    <pre>{JSON.stringify(data, null, 2)}</pre>
+                </div>
+            ) : (
+                <p>Loading data...</p>
+            )}
         </div>
     )
 }
-
-interface TitleProps {
-    text: string;
-}
-
-interface CountProps {
-    initialCount?: number;
-}
-
-function Title(props: TitleProps) {
-    return <h1>{props.text}</h1>
-}
-
-function CountButton({initialCount = 0}: CountProps) {
-    const [count, setCount] = useState(initialCount);
-    const handleClick = () => {
-        setCount(count+1);
-    }
-
-    return (
-        <button onClick={handleClick}>
-            {count}
-        </button>
-    )
-}
-
 
 export default App;
