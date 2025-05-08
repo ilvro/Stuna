@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import './App.css'
-import '../styles/questionCards.css';
 import QuestionCard from '../components/questionCards.tsx';
+import './App.css'
 const apiURL = import.meta.env.VITE_API_URL;
 
 interface Question {
