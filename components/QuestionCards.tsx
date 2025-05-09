@@ -11,7 +11,7 @@ interface Props {
     question: Question;
 }
   
-  export default function QuestionCard({ question }: Props) {
+export default function QuestionCard({ question }: Props) {
     return (
       <div
         className="border border-white/30 rounded-xl p-4 shadow-md duration-200 hover:scale-[1.01]">
