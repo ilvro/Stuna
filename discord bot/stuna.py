@@ -31,34 +31,6 @@ class discordClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
-    async def on_message(self, message):
-        if message.author == self.user:
-            return
-        
-        match = QUESTION_REGEX.match(message.content)
-        if match:
-            timestamp, emoji, info_block, comment = match.groups()
-            try:
-                parts = [part.strip() for part in info_block.split('-')]
-                test = parts[0]
-                question_number = parts[1]
-                field = parts[2]
-            except:
-                await message.channel.send("Invalid format")
-                return
-            
-            image_url = None
-            if message.attachments:
-                image_url = message.attachments[0].url
-
-            with open(CSV_FILE, mode='a', newline='', encoding='utf-8') as f:
-                writer = csv.writer(f)
-                writer.writerow([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url])
-
-            await message.add_reaction('💾')
-
-        await bot.process_commands(message)
-
 
 @bot.command(name='import')
 async def import_questions(ctx, arg=None):
