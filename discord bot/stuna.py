@@ -24,7 +24,7 @@ CSV_FILE = 'questions.csv'
 if not os.path.exists(CSV_FILE):
     with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['timestamp', 'emoji', 'test', 'question_number', 'field', 'comment'])
+        writer.writerow(['created_at', 'timestamp', 'emoji', 'test', 'question_number', 'field', 'comment'])
 
 
 class discordClient(discord.Client):
@@ -49,7 +49,7 @@ class discordClient(discord.Client):
             
             with open(CSV_FILE, mode='a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow([timestamp, emoji, test, question_number, field, comment])
+                writer.writerow([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment])
 
             await message.add_reaction('💾')
 
@@ -76,7 +76,7 @@ async def import_questions(ctx, arg=None):
         elif unit == 'm':
             time_filter = now - timedelta(days=num * 30) 
 
-    elif arg != "confirm":
+    elif arg != "all":
         print(arg)
         await ctx.send("❌ Invalid argument.")
         return
@@ -86,7 +86,7 @@ async def import_questions(ctx, arg=None):
     # reset CSV file
     with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['timestamp', 'emoji', 'test', 'question_number', 'field', 'comment'])
+        writer.writerow(['created_at', 'timestamp', 'emoji', 'test', 'question_number', 'field', 'comment'])
 
     await status_msg.edit(content='📁 File deleted. Reading channel messages...')
     count = 0
@@ -128,7 +128,7 @@ async def import_questions(ctx, arg=None):
                 except:
                     continue
                     
-                csv_rows.append([timestamp, emoji, test, question_number, field, comment])
+                csv_rows.append([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment])
                 count += 1
         
         # write batch to CSV
