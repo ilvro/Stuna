@@ -7,14 +7,19 @@ interface Props {
   
 export default function QuestionCard({ question }: Props) {
     return (
-      <div className="border border-white/30 rounded-xl p-4 shadow-md duration-200 hover:scale-[1.01]">
+      <div className="relative border border-white/30 rounded-xl p-4 shadow-md duration-200 hover:scale-[1.01]">
         <div className="flex justify-between">
             <div className="text-[1.1rem] mb-2 flex items-center gap-2">
                 <span className="text-[1.4rem]">{question.emoji}</span>
                 <strong>{question.question_number}</strong> - {question.test}
             </div>
 
-            <p className="text-sm text-gray-400">{formatDate(question.created_at)}</p>
+            <div className="absolute top-4 right-4 text-sm text-gray-400 text-right">
+                <p>{formatDate(question.created_at)}</p>
+                {question.image_url && (
+                    <img src={question.image_url} alt="attachment" className="mt-2 h-24 w-48 rounded" />
+                )}
+            </div>
         </div>
   
         <div>

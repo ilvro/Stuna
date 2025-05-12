@@ -1,8 +1,10 @@
 export default interface Question {
-    comment: string;
-    emoji: string;
-    field: string;
-    question_number: string;
-    test: string;
+    created_at: string;
     timestamp: string;
+    emoji: string;
+    test: string;
+    question_number: string;
+    field: string;
+    comment: string;
+    image_url?: string;
 }

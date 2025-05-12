@@ -24,7 +24,7 @@ CSV_FILE = 'questions.csv'
 if not os.path.exists(CSV_FILE):
     with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['created_at', 'timestamp', 'emoji', 'test', 'question_number', 'field', 'comment'])
+        writer.writerow(['created_at', 'timestamp', 'emoji', 'test', 'question_number', 'field', 'comment', 'image_url'])
 
 
 class discordClient(discord.Client):
@@ -44,12 +44,16 @@ class discordClient(discord.Client):
                 question_number = parts[1]
                 field = parts[2]
             except:
-                await message.channel.send("Formato invalido")
+                await message.channel.send("Invalid format")
                 return
             
+            image_url = None
+            if message.attachments:
+                image_url = message.attachments[0].url
+
             with open(CSV_FILE, mode='a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment])
+                writer.writerow([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url])
 
             await message.add_reaction('💾')
 
@@ -86,7 +90,7 @@ async def import_questions(ctx, arg=None):
     # reset CSV file
     with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['created_at', 'timestamp', 'emoji', 'test', 'question_number', 'field', 'comment'])
+        writer.writerow(['created_at', 'timestamp', 'emoji', 'test', 'question_number', 'field', 'comment', 'image_url'])
 
     await status_msg.edit(content='📁 File deleted. Reading channel messages...')
     count = 0
@@ -127,8 +131,12 @@ async def import_questions(ctx, arg=None):
                     field = parts[2]
                 except:
                     continue
+
+                image_url = None
+                if message.attachments:
+                    image_url = message.attachments[0].url
                     
-                csv_rows.append([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment])
+                csv_rows.append([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url])
                 count += 1
         
         # write batch to CSV
