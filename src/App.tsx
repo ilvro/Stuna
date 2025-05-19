@@ -6,6 +6,7 @@ import Question from "../types/types.tsx";
 function App() {
     const [data, setData] = useState<Question[]>([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [previewImage, setPreviewImage] = useState<string | null>(null);
 
     useEffect(() => {
         fetch(import.meta.env.VITE_API_URL + '/questions')
@@ -27,10 +28,27 @@ function App() {
         <h1 className="font-bold mb-4">Questions</h1>
         <div className="space-y-4">
           {data.slice(0,12).map((q, i) => (
-            <QuestionCard key={i} question={q} />
+            <QuestionCard key={i} question={q} setPreviewImage={setPreviewImage}/>
           ))}
         </div>
       </div>
+
+      {/* commented code to pick up react better */}
+      {previewImage && (
+        <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-none z-50 flex items-center justify-center"
+            onClick={() => setPreviewImage(null)}> {/* clicking on the dimmer means you clicked out of the image, so set the image to null to close it*/}
+
+            <img
+                src={previewImage}
+                alt="preview"
+                className="max-w-[90%] max-h-[90%] rounded-lg shadow-xl"
+                onClick={(e) => e.stopPropagation()}> {/* clicking on the image wont propagate the effect above, so it wont close*/}
+            
+            </img>
+        </div>
+      )}
+
     </div>
   );
 }

@@ -3,9 +3,10 @@ import { formatDate } from './utilities/formatDate.tsx'
   
 interface Props {
     question: Question;
+    setPreviewImage: (url: string) => void;
 }
   
-export default function QuestionCard({ question }: Props) {
+export default function QuestionCard({ question, setPreviewImage }: Props) {
     return (
       <div className="relative border border-white/30 rounded-xl p-4 shadow-md duration-200 hover:scale-[1.01]">
         <div className="flex justify-between">
@@ -17,7 +18,8 @@ export default function QuestionCard({ question }: Props) {
             <div className="absolute top-4 right-4 text-sm text-gray-400 text-right">
                 <p>{formatDate(question.created_at)}</p>
                 {question.image_url && (
-                    <img src={question.image_url} alt="attachment" className="mt-2 h-24 w-48 rounded" />
+                    <img src={question.image_url} alt="attachment" className="mt-2 h-24 w-48 rounded cursor-pointer hover:opacity-80 transition"
+                    onClick={() => question.image_url && setPreviewImage(question.image_url)} />
                 )}
             </div>
         </div>
