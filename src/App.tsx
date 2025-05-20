@@ -43,9 +43,9 @@ function App() {
                 src={previewImage}
                 alt="preview"
                 className="max-w-[90%] max-h-[90%] rounded-lg shadow-xl"
-                onClick={(e) => e.stopPropagation()}> {/* clicking on the image wont propagate the effect above, so it wont close*/}
-            
+                onClick={(e) => e.stopPropagation()}>
             </img>
+            {/* add stopPropagation in the image so clicking on the image doesnt trigger the close event*/}
         </div>
       )}
 
