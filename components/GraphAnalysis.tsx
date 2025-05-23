@@ -1,4 +1,4 @@
-import { BarChart, Bar, ResponsiveContainer, CartesianGrid, Rectangle, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import Question from '../types/types';
 
 interface AnalysisProps {
@@ -35,18 +35,20 @@ export default function GraphAnalysis({ data }: AnalysisProps) {
             weekDay: string; 
             correct: number; 
             half: number; 
+            incorrect: number;
             total: number;
             field: string;}> = {};
 
         data.forEach(question => {
             const day = getCalendarDay(question.created_at)
             if (!result[day]) {
-                result[day] = {day: day, weekDay: getWeekDay(question.created_at), correct: 0, half: 0, total: 0, field: question.field}
+                result[day] = {day: day, weekDay: getWeekDay(question.created_at), correct: 0, half: 0, incorrect: 0, total: 0, field: question.field}
             }
 
             result[day].total++;
             if (checkQuestion(question) == 'correct') result[day].correct++;
             if (checkQuestion(question) == 'half') result[day].half++;
+            if (checkQuestion(question) == 'incorrect') result[day].incorrect++;
         });
 
         /* result is
@@ -89,8 +91,9 @@ export default function GraphAnalysis({ data }: AnalysisProps) {
                 <YAxis></YAxis>
                 <Tooltip></Tooltip>
                 <Legend></Legend>
-                <Bar dataKey="correct" stackId="a" fill="#1699b8" activeBar={<Rectangle fill="pink" stroke="blue"></Rectangle>}></Bar>
-                <Bar dataKey="total" stackId="a" fill="#8884d8" activeBar={<Rectangle fill="blue" stroke="pink"></Rectangle>}></Bar>
+                <Bar dataKey="correct" stackId='a' fill="#1699b8"></Bar>
+                <Bar dataKey="half" stackId='a' fill="#1699b8" fillOpacity="0.5"></Bar>
+                <Bar dataKey="incorrect" stackId='a' fill="#8884d8"></Bar>
 
             </BarChart>
         </ResponsiveContainer>
