@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import SideBar from "../components/SideBar.tsx";
-import BarAnalysis from "../components/GraphAnalysis.tsx";
+import GraphAnalysis from "../components/GraphAnalysis.tsx";
 import QuestionCard from "../components/QuestionCards.tsx";
 import Question from "../types/types.tsx";
 
@@ -26,7 +26,7 @@ function App() {
           ☰
         </button>
 
-        <BarAnalysis data={data}/>
+        <GraphAnalysis data={data}/>
         
         <h1 className="font-bold mb-4">Questions</h1>
         <div className="space-y-4">
