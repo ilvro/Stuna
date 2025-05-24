@@ -1,11 +1,13 @@
 import { BarChart, Bar, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import Question from '../types/types';
+import { formatShortDate } from './utilities/formatDate'
 
 interface AnalysisProps {
     data: Question[];
+    range: number
 }
 
-export default function GraphAnalysis({ data }: AnalysisProps) {
+export default function GraphAnalysis({ data, range }: AnalysisProps) {
     if (!data || data.length === 0) return null;
     const checkQuestion = (question: Question) => {
         return question.emoji == '✅' ? 'correct'
@@ -29,7 +31,7 @@ export default function GraphAnalysis({ data }: AnalysisProps) {
     }
 
     // one object for each day
-    const processWeeklyReport = (data: Question[]) => {
+    const processReport = (data: Question[], range: number) => {
         let result: Record<string, {
             day: string; 
             weekDay: string; 
@@ -37,7 +39,8 @@ export default function GraphAnalysis({ data }: AnalysisProps) {
             half: number; 
             incorrect: number;
             total: number;
-            field: string;}> = {};
+            field: string;
+        }> = {};
 
         data.forEach(question => {
             const day = getCalendarDay(question.created_at)
@@ -65,12 +68,7 @@ export default function GraphAnalysis({ data }: AnalysisProps) {
             const dateB = new Date(b[0]).getTime();
             return dateA - dateB
         })
-
-        let recent = orderedByDate.slice(-7); // get last 7 days, filter will handle this later when its added
-        recent.map(entry => {
-            const value = entry[1];
-            return value;
-        })
+        let recent = orderedByDate.slice(-range); // removes questions that dont belong in the range
 
         // format array objects into one object (ignores the first one, its just the date and messes up with recharts)
         return recent.map(([ , value]) => value)
@@ -79,16 +77,27 @@ export default function GraphAnalysis({ data }: AnalysisProps) {
     return (
         <ResponsiveContainer width="100%" height={300}>
             <BarChart
-                data={processWeeklyReport(data)} /* recharts automatically loops through every data item */
+                data={processReport(data, range)} /* recharts automatically loops through every data item */
                 margin={{
                     top: 5,
                     right: 30,
                     left: 20,
                     bottom: 5,
-            }}>
+                }}>
                 <CartesianGrid strokeDasharray="3 3"></CartesianGrid>
-                <XAxis dataKey="weekDay"></XAxis>
+                <XAxis 
+                    dataKey={range > 7 ? "day" : "weekDay"}
+
+                    /* format text for when the full date is displayed */
+                    tickFormatter={(date) => {
+                        return range > 7 ? formatShortDate(date) : date; // para weekDay
+                    }}
+                    angle={range > 7 ? -45 : 0}
+                    textAnchor={range > 7 ? "end" : "middle"}
+                    tick={{ fontSize: 10 }}
+                    />
                 <YAxis></YAxis>
+
                 <Tooltip></Tooltip>
                 <Legend></Legend>
                 <Bar dataKey="correct" stackId='a' fill="#1699b8"></Bar>

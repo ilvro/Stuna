@@ -26,7 +26,7 @@ function App() {
           ☰
         </button>
 
-        <GraphAnalysis data={data}/>
+        <GraphAnalysis data={data} range={30}/>
         
         <h1 className="font-bold mb-4">Questions</h1>
         <div className="space-y-4">

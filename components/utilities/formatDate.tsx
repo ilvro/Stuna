@@ -1,3 +1,8 @@
+export function formatShortDate(dateString: string): string {
+    const d = new Date(dateString);
+    return `${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}`;
+}
+
 function getTime(dateString: Date) {
     return dateString.toLocaleString('pt-BR', {
         hour: '2-digit',
