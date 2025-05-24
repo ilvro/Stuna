@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-import SideBar from "../components/SideBar.tsx";
 import GraphAnalysis from "../components/GraphAnalysis.tsx";
 import QuestionCard from "../components/QuestionCards.tsx";
 import Question from "../types/types.tsx";
 
 function App() {
     const [data, setData] = useState<Question[]>([]);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [previewImage, setPreviewImage] = useState<string | null>(null);
 
     useEffect(() => {
@@ -16,44 +14,52 @@ function App() {
     }, []);
 
   return (
-    <div className="container max-w-screen-xl mx-auto">
-      <SideBar isOpen={isSidebarOpen} toggle={() => setIsSidebarOpen(prev => !prev)} />
-      
-      <div className={`duration-250 ${isSidebarOpen ? 'ml-42' : 'ml-16'} p-4 w-full`}>
-        <button 
-          onClick={() => setIsSidebarOpen(prev => !prev)} 
-          className="mb-4 text-white rounded">
-          ☰
-        </button>
 
-        <GraphAnalysis data={data} range={30}/>
-        
-        <h1 className="font-bold mb-4">Questions</h1>
-        <div className="space-y-4">
-          {data.slice(0,12).map((q, i) => (
-            <QuestionCard key={i} question={q} setPreviewImage={setPreviewImage}/>
-          ))}
+        <div>
+            <nav className="flex items-center shadow-md h-15 mb-30 space-x-8 px-12">
+                <a className="">Stuna</a>
+                <a>Guide</a>
+                <a>History</a>{/*show monthly report, streak)*/}
+                <a>Analysis</a>{/*proportional analysis: in month 1 the correct over total proportion was 35%, the next month it would show 47%, showing the progress over time. this would be an area chart. this month analysis, last 3 months analysis, year analysis, radar charts showing the fields of study in which you are strongest and the ones in which you are the weakest (using proportion again)*/}
+                <a className="flex ml-auto mr-">GitHub</a>
+            </nav>
+
+
+            <div className="mx-100">
+                {/* the graphs on the first page will be 
+                    weekly report with correct/total (bar chart)
+                */}
+
+                {/* stat cards with total questions done, streak, correct questions, total precision, average question time, total time studied*/}
+
+
+                <GraphAnalysis data={data} range={30}/>
+                    
+                <h1 className="font-bold mb-4">Questions</h1>
+                <div className="space-y-4">
+                    {data.slice(0,12).map((q, i) => (
+                        <QuestionCard key={i} question={q} setPreviewImage={setPreviewImage}/>
+                    ))}
+                </div>
+
+                {/* commented code to pick up react better */}
+                {previewImage && (
+                    <div
+                        className="fixed inset-0 bg-black/60 backdrop-blur-none z-50 flex items-center justify-center"
+                        onClick={() => setPreviewImage(null)}> {/* clicking on the dimmer means you clicked out of the image, so set the image to null to close it*/}
+
+                        <img
+                            src={previewImage}
+                            alt="preview"
+                            className="max-w-[90%] max-h-[90%] rounded-lg animate-fadeInZoom"
+                            onClick={(e) => e.stopPropagation()}>
+                        </img>
+                        {/* add stopPropagation in the image so clicking on the image doesnt trigger the close event*/}
+                    </div>
+                )}
+            </div>
         </div>
-      </div>
-
-      {/* commented code to pick up react better */}
-      {previewImage && (
-        <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-none z-50 flex items-center justify-center"
-            onClick={() => setPreviewImage(null)}> {/* clicking on the dimmer means you clicked out of the image, so set the image to null to close it*/}
-
-            <img
-                src={previewImage}
-                alt="preview"
-                className="max-w-[90%] max-h-[90%] rounded-lg animate-fadeInZoom"
-                onClick={(e) => e.stopPropagation()}>
-            </img>
-            {/* add stopPropagation in the image so clicking on the image doesnt trigger the close event*/}
-        </div>
-      )}
-
-    </div>
-  );
+    );
 }
 
 export default App;
