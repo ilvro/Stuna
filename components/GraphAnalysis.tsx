@@ -1,24 +1,20 @@
 import { BarChart, Bar, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import Question from '../types/types';
 import { formatShortDate } from './utilities/formatDate'
+import React from 'react';
 
 interface AnalysisProps {
     data: Question[];
     range: number
 }
 
-export default function GraphAnalysis({ data, range }: AnalysisProps) {
+function GraphAnalysis({ data, range }: AnalysisProps) {
     if (!data || data.length === 0) return null;
     const checkQuestion = (question: Question) => {
         return question.emoji == '✅' ? 'correct'
             : question.emoji == '❌' ? 'incorrect'
             : question.emoji == '☑️' ? 'half'
             : null;
-    }
-
-    const convertTime = (timestamp: string) => {
-        const [minutes, seconds] = timestamp.split(':').map(Number);
-        return minutes + seconds / 60;
     }
 
     const getCalendarDay = (dateString: string) => {
@@ -114,3 +110,5 @@ export default function GraphAnalysis({ data, range }: AnalysisProps) {
         </div>*/
     )
 }
+
+export default React.memo(GraphAnalysis);
