@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen } from 'lucide-react';
 import GraphAnalysis from "../components/GraphAnalysis.tsx";
 import QuestionCard from "../components/QuestionCards.tsx";
 import StatCard from '../components/StatCards.tsx';
@@ -31,12 +32,20 @@ function App() {
                     weekly report with correct/total (bar chart)
                 */}
 
-                {/* stat cards with total questions done, streak, correct questions, total precision, average question time, total time studied*/}
-
-                <div className="flex flex-col items-center mb-20">
+                <div className="flex flex-col items-center mb-10" id="main-title">
                     <h1 className="text-[#208eaf]">Stuna</h1>
                     <h2 className="mt-2">Track your studies with data analysis</h2>
                 </div>
+                
+                <div className="grid grid-cols-2 gap-4 mb-12" id="stat-cards">
+                    <StatCard icon={<Target className="text-blue-600" />} title='Total Questions' stat='672'></StatCard>
+                    <StatCard icon={<BadgeCheck className="text-green-600" />} title='Correct Questions' stat='389'></StatCard>
+                    <StatCard icon={<Zap className="text-orange-500" />} title='Precision' stat='69%'></StatCard>
+                    <StatCard icon={<Clock className="text-blue-500" />} title='Average Time' stat='04:32'></StatCard>
+                    <StatCard icon={<BrainCircuit className="text-indigo-600" />} title='Total Time' stat='72h'></StatCard>
+                    <StatCard icon={<BookOpen className="text-black" />} title='Streak' stat='14'></StatCard>
+                </div>
+                
 
                 <GraphAnalysis data={data} range={30}/>
                     
