@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import GraphAnalysis from "../components/GraphAnalysis.tsx";
 import QuestionCard from "../components/QuestionCards.tsx";
+import StatCard from '../components/StatCards.tsx';
 import Question from "../types/types.tsx";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                     <h1 className="text-[#208eaf]">Stuna</h1>
                     <h2 className="mt-2">Track your studies with data analysis</h2>
                 </div>
+
                 <GraphAnalysis data={data} range={30}/>
                     
                 <h1 className="font-bold mb-4">Questions</h1>

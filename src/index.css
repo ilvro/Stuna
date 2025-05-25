@@ -83,14 +83,25 @@ button {
     }
 }
 
-#main-nav-bar {
-    a {
-        height: 100%;
-        display: flex;
-        align-items: center
-    }
-    a:hover {
-        border-bottom: 1px solid #208eaf;
-        transition: border-bottom 0.3s ease
-    }
+#main-nav-bar a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#main-nav-bar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width 0.1s ease, background-color 0.1s ease;
+}
+
+#main-nav-bar a:hover::after {
+    width: 100%;
+    background: #208eaf;
 }
