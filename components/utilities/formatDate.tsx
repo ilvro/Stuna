@@ -1,6 +1,10 @@
-export function formatShortDate(dateString: string): string {
-    const d = new Date(dateString);
-    return `${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}`;
+export function formatShortDate(simpleDate: string) { /* this function is different because it takes regular dates like 2025-05-22, not ISO dates */
+    const [year, month, day] = simpleDate.split('-').map(Number);
+    const date = new Date(year, month - 1, day); // month is 0-based
+    return date.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+    });
 }
 
 function getTime(dateString: Date) {
@@ -10,7 +14,7 @@ function getTime(dateString: Date) {
     })
 }
 
-function getDate(dateString: Date) {
+export function getDate(dateString: Date) {
     return dateString.toLocaleString('pt-BR', {
         day: '2-digit',
         month: '2-digit',

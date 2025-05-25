@@ -1,6 +1,6 @@
 import { BarChart, Bar, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import Question from '../types/types';
-import { formatShortDate } from './utilities/formatDate'
+import { formatShortDate, getDate } from './utilities/formatDate'
 import React from 'react';
 
 interface AnalysisProps {
@@ -18,12 +18,16 @@ function GraphAnalysis({ data, range }: AnalysisProps) {
     }
 
     const getCalendarDay = (dateString: string) => {
-        return dateString.split("T")[0]
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`; // yyyy-mm-dd, mas com hora local
     }
+    
 
     const getWeekDay = (dateString: string) => {
-        const date = new Date(dateString);
-        return date.toLocaleString('default', {weekday: 'long'})
+        return new Date(dateString).toLocaleDateString('en-CA', { weekday: 'long' });
     }
 
     // one object for each day
@@ -86,6 +90,7 @@ function GraphAnalysis({ data, range }: AnalysisProps) {
 
                     /* format text for when the full date is displayed */
                     tickFormatter={(date) => {
+                        console.log(date);
                         return range > 7 ? formatShortDate(date) : date; // para weekDay
                     }}
                     angle={range > 7 ? -45 : 0}
