@@ -38,7 +38,7 @@ a {
 }
 a:hover {
     cursor: pointer;
-    color: #535bf2;
+    color: rgb(83, 79, 79);
 }
 
 body {
@@ -80,5 +80,17 @@ button {
     }
     button {
         background-color: #f9f9f9;
+    }
+}
+
+#main-nav-bar {
+    a {
+        height: 100%;
+        display: flex;
+        align-items: center
+    }
+    a:hover {
+        border-bottom: 1px solid #208eaf;
+        transition: border-bottom 0.3s ease
     }
 }
