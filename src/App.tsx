@@ -21,7 +21,7 @@ function App() {
                 <a>Guide</a>
                 <a>History</a>{/*show monthly report, streak)*/}
                 <a>Analysis</a>{/*proportional analysis: in month 1 the correct over total proportion was 35%, the next month it would show 47%, showing the progress over time. this would be an area chart. this month analysis, last 3 months analysis, year analysis, radar charts showing the fields of study in which you are strongest and the ones in which you are the weakest (using proportion again)*/}
-                <a className="flex ml-auto" href="https://github.com/ilvro/Stuna" rel="noreferrer">GitHub</a>
+                <a className="flex ml-auto" href="https://github.com/ilvro/Stuna" target='_blank'>GitHub</a>
             </nav>
 
 
