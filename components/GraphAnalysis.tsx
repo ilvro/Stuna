@@ -1,6 +1,6 @@
 import { BarChart, Bar, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { formatShortDate } from './utilities/formatDate'
-import processReport from './utilities/analysisUtils.tsx'
+import { processReport } from './utilities/analysisUtils.tsx'
 import Question from '../types/types';
 import React from 'react';
 
@@ -28,7 +28,6 @@ function GraphAnalysis({ data, range }: AnalysisProps) {
 
                     /* format text for when the full date is displayed */
                     tickFormatter={(date) => {
-                        console.log(date);
                         return range > 7 ? formatShortDate(date) : date;
                     }}
                     angle={range > 7 ? -45 : 0}
