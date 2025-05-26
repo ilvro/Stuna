@@ -38,13 +38,13 @@ export function processReport(data: Question[], range: number) {
     // add the days where the user didnt do any questions
     const dates = Object.keys(result).sort((a, b) => new Date(a).getTime() - new Date(b).getTime());
     const startDate = new Date(dates[0]);
-    const endDate = new Date(dates[dates.length - 1]);
+    const todayDate = new Date();
 
-    let currentDate = new Date(startDate);
-    while (currentDate <= endDate) {
-        const year = currentDate.getFullYear();
-        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-        const day = String(currentDate.getDate()).padStart(2, '0');
+    let loopingDate = new Date(startDate);
+    while (loopingDate <= todayDate) {
+        const year = loopingDate.getFullYear();
+        const month = String(loopingDate.getMonth() + 1).padStart(2, '0');
+        const day = String(loopingDate.getDate()).padStart(2, '0');
         const formattedDate = `${year}-${month}-${day}`;
 
         if (!result[formattedDate]) {
@@ -58,7 +58,7 @@ export function processReport(data: Question[], range: number) {
             };
         }
 
-        currentDate.setDate(currentDate.getDate() + 1)
+        loopingDate.setDate(loopingDate.getDate() + 1)
     }
 
     // turn results into an array (recharts only accepts arrays)
