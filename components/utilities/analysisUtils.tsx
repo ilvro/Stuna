@@ -1,4 +1,4 @@
-import { getCalendarDay, getWeekDay } from './formatDate'
+import { getCalendarDay, getWeekDay, getDate } from './formatDate'
 import Question from '../../types/types.tsx'
 
 const checkQuestion = (question: Question) => {
@@ -90,6 +90,31 @@ export function getStatsSummary(data: Question[]) {
         precision: `${precision}%`,
         averageTime: formatSecondsToTime(averageTimeSec),
         totalTime: formatSecondsToHour(totalTimeSec),
-        streak: 14 /* still placeholder */
+        streak: getStreak(data) /* still placeholder */
     }
+}
+
+export function getStreak(data: Question[]) {
+    let streak = 0;
+    let lastDate: Date;
+    let currentDate: Date;
+    let uniqueDates = [];
+    const dates = data.map(q => q.created_at.split('T')[0]);
+
+    uniqueDates = Array.from(new Set(dates)).sort();
+    for (let i = 0; i < uniqueDates.length; i++) {
+        currentDate = new Date(uniqueDates[i]);
+        lastDate = new Date(uniqueDates[i-1]);
+
+        let diffInMs = currentDate.getTime() - lastDate.getTime()
+        let diffDays = diffInMs / (1000 * 60 * 60 * 24);
+        if (diffDays === 1 || diffDays === null) { /* diff null would be the first day */
+            streak += 1
+            /* console.log('user has a streak of ' + streak + ' days (day ' + currentDate.getDate() + ' )')*/
+        }
+        else {
+            streak = 0; // diff in days is greater than 2, so the user lost the streak
+        }
+    }
+    return streak
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen } from 'lucide-react';
-import { getStatsSummary } from '../components/utilities/analysisUtils.tsx'
+import { getStatsSummary, getStreak } from '../components/utilities/analysisUtils.tsx'
 import GraphAnalysis from "../components/GraphAnalysis.tsx";
 import QuestionCard from "../components/QuestionCards.tsx";
 import StatCard from '../components/StatCards.tsx';
@@ -17,6 +17,7 @@ function App() {
     }, []);
 
     const summary = useMemo(() => getStatsSummary(data), [data]);
+    getStreak(data)
 
   return (
 
