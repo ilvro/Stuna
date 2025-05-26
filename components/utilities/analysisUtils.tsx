@@ -1,4 +1,4 @@
-import { getCalendarDay, getWeekDay, getDate } from './formatDate'
+import { getCalendarDay, getWeekDay } from './formatDate'
 import Question from '../../types/types.tsx'
 
 const checkQuestion = (question: Question) => {
@@ -34,20 +34,46 @@ export function processReport(data: Question[], range: number) {
         2025-05-17: {day: '2025-05-17', weekDay: 'Saturday', correct: 0, half: 1, total: 2}
         2025-05-18: {day: '2025-05-18', weekDay: 'Sunday', correct: 3, half: 0, total: 4}
     */
+
+    // add the days where the user didnt do any questions
+    const dates = Object.keys(result).sort((a, b) => new Date(a).getTime() - new Date(b).getTime());
+    const startDate = new Date(dates[0]);
+    const endDate = new Date(dates[dates.length - 1]);
+
+    let currentDate = new Date(startDate);
+    while (currentDate <= endDate) {
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`;
+
+        if (!result[formattedDate]) {
+            result[formattedDate] = {
+                day: formattedDate,
+                weekDay: getWeekDay(formattedDate),
+                correct: 0,
+                half: 0,
+                incorrect: 0,
+                total: 0
+            };
+        }
+
+        currentDate.setDate(currentDate.getDate() + 1)
+    }
+
     // turn results into an array (recharts only accepts arrays)
-    // object.entries turns each of objects into paired arrays. we will turn them into a single object after using the first object (date) to sort them
-    const questionsArray = Object.entries(result)
+    const completeData = Object.values(result)
 
-    // sort the array by chronological order (the discord bot will do that, but just in case the data doesnt come from discord)
-    const orderedByDate = questionsArray.sort((a, b) => {
-        const dateA = new Date(a[0]).getTime();
-        const dateB = new Date(b[0]).getTime();
-        return dateA - dateB
-    })
-    let recent = orderedByDate.slice(-range); // removes questions that dont belong in the range
+    // sort by date
+    const orderedData = completeData.sort((a, b) => {
+        const dateA = new Date(a.day);
+        const dateB = new Date(b.day);
+        return dateA.getTime() - dateB.getTime();
+    });
 
-    // format array objects into one object (ignores the first one, its just the date and messes up with recharts)
-    return recent.map(([ , value]) => value)
+    let recent = orderedData.slice(-range); // removes questions that dont belong in the range
+
+    return recent
 }
 
 function parseTimeStamp(timestamp: string): number {
