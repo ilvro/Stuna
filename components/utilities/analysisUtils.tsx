@@ -16,18 +16,20 @@ export function processReport(data: Question[], range: number) {
         half: number; 
         incorrect: number;
         total: number;
+        precision: number;
     }> = {};
 
     data.forEach(question => {
         const day = getCalendarDay(question.created_at)
         if (!result[day]) {
-            result[day] = {day: day, weekDay: getWeekDay(question.created_at), correct: 0, half: 0, incorrect: 0, total: 0}
+            result[day] = {day: day, weekDay: getWeekDay(question.created_at), correct: 0, half: 0, incorrect: 0, total: 0, precision: 0}
         }
 
         result[day].total++;
         if (checkQuestion(question) == 'correct') result[day].correct++;
         if (checkQuestion(question) == 'half') result[day].half++;
         if (checkQuestion(question) == 'incorrect') result[day].incorrect++;
+        result[day].precision = (result[day].correct + result[day].half/2)/result[day].total
     });
 
     /* result is
@@ -54,7 +56,8 @@ export function processReport(data: Question[], range: number) {
                 correct: 0,
                 half: 0,
                 incorrect: 0,
-                total: 0
+                total: 0,
+                precision: 0
             };
         }
 
@@ -107,7 +110,7 @@ export function getStatsSummary(data: Question[]) {
         totalTimeSec += parseTimeStamp(question.timestamp);
     });
 
-    const precision = total > 0 ? Math.round((correct / total) * 100) : 0;
+    const precision = total > 0 ? Math.round(((correct + half/2) / total) * 100) : 0;
     const averageTimeSec = total > 0 ? totalTimeSec / total : 0;
 
     return {

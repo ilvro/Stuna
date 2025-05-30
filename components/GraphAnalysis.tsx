@@ -38,6 +38,7 @@ function GraphAnalysis({ data, range }: AnalysisProps) {
 
                 <Tooltip></Tooltip>
                 <Legend></Legend>
+                
                 <Bar dataKey="correct" stackId='a' fill="#1699b8"></Bar>
                 <Bar dataKey="half" stackId='a' fill="#1699b8" fillOpacity="0.5"></Bar>
                 <Bar dataKey="incorrect" stackId='a' fill="#8884d8"></Bar>
