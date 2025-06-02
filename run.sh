@@ -6,6 +6,9 @@ NPM_PID=$!
 cd api
 python app.py &
 FLASK_PID=$!
+cd ..
+cd "discord bot" 
+python stuna.py
 
 sleep 3
 
