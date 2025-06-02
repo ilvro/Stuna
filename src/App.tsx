@@ -43,7 +43,7 @@ function App() {
                 
                 <div className="grid grid-cols-2 gap-4 mb-12" id="stat-cards">
                     <StatCard icon={<Target className="text-blue-600" />} title='Total Questions' stat={summary.totalQuestions}></StatCard>
-                    <StatCard icon={<BadgeCheck className="text-green-600" />} title='Correct Questions' stat={summary.correct}></StatCard>
+                    <StatCard icon={<BadgeCheck className="text-green-600" />} title='Correct Questions' stat={summary.correct + summary.half/2}></StatCard>
                     <StatCard icon={<Zap className="text-orange-500" />} title='Precision' stat={summary.precision}></StatCard>
                     <StatCard icon={<Clock className="text-blue-500" />} title='Average Time' stat={summary.averageTime}></StatCard>
                     <StatCard icon={<BrainCircuit className="text-indigo-600" />} title='Total Time' stat={summary.totalTime}></StatCard>

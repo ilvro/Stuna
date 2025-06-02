@@ -116,6 +116,7 @@ export function getStatsSummary(data: Question[]) {
     return {
         totalQuestions: total,
         correct,
+        half,
         precision: `${precision}%`,
         averageTime: formatSecondsToTime(averageTimeSec),
         totalTime: formatSecondsToHour(totalTimeSec),
