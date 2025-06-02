@@ -129,4 +129,45 @@ async def import_questions(ctx, arg=None):
     
     await status_msg.edit(content=f"✅ Successfully imported {count} questions from {processed} messages.")
 
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+        return
+
+    match = QUESTION_REGEX.match(message.content)
+    if match:
+        timestamp, emoji, info_block, comment = match.groups()
+        try:
+            parts = [part.strip() for part in info_block.split('-')]
+            test = parts[0]
+            question_number = parts[1]
+            field = parts[2]
+        except Exception as e:
+            print(f"Error parsing message: {e}")
+            return
+
+        image_url = None
+        if message.attachments:
+            image_url = message.attachments[0].url
+
+        new_row = [message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url]
+
+        # read all current rows
+        with open(CSV_FILE, mode='r', newline='', encoding='utf-8') as f:
+            reader = list(csv.reader(f))
+            header = reader[0]
+            existing_rows = reader[1:]
+
+        # prepend the new row
+        with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(header)
+            writer.writerow(new_row)
+            writer.writerows(existing_rows)
+
+
+    await bot.process_commands(message)
+
+
+
 bot.run(TOKEN)
