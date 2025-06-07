@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen } from 'lucide-react';
 import { getStatsSummary, getStreak } from '../components/utilities/analysisUtils.tsx'
-import GraphAnalysis from "../components/GraphAnalysis.tsx";
+import GraphAnalysis from "../components/BarChartAnalysis.tsx";
 import QuestionCard from "../components/QuestionCards.tsx";
 import StatCard from '../components/StatCards.tsx';
 import Question from "../types/types.tsx";
@@ -60,7 +60,6 @@ function App() {
                     ))}
                 </div>
 
-                {/* commented code to pick up react better */}
                 {previewImage && (
                     <div
                         className="fixed inset-0 bg-black/60 backdrop-blur-none z-50 flex items-center justify-center"

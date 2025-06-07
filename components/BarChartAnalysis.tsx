@@ -1,7 +1,7 @@
 import { BarChart, Bar, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
-import { formatShortDate } from './utilities/formatDate'
+import { formatShortDate } from './utilities/formatDate.tsx'
 import { processReport } from './utilities/analysisUtils.tsx'
-import Question from '../types/types';
+import Question from '../types/types.tsx';
 import React from 'react';
 
 interface AnalysisProps {
