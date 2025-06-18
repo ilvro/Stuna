@@ -1,4 +1,4 @@
-import { getCalendarDay, getWeekDay } from './formatDate'
+import { getCalendarDay, getWeekDay, getDate } from './formatDate'
 import Question from '../../types/types.tsx'
 
 const checkQuestion = (question: Question) => {
@@ -96,14 +96,28 @@ function formatSecondsToHour(seconds: number): string {
     return `${hours}h${min > 0 ? ` ${min}min` : ''}`;
 }
 
-export function getStatsSummary(data: Question[]) {
-    const total = data.length;
+export function getStatsSummary(data: Question[], range: number) {
+    // slice the data with the range
+    let newData: Question[] = [];
+    const currentDate = new Date();
+
+    data.forEach(question => {
+        // this is done with miliseconds and then converted to days again because the months mess with the calculation
+        let questionDate = new Date(question.created_at.split('T')[0]);
+        let diffInMs = currentDate.getTime() - questionDate.getTime()
+        let diffDays = diffInMs / (1000 * 60 * 60 * 24);
+        if (diffDays <= range) {
+            newData.push(question);
+        }
+    })
+
+    const total = newData.length;
     let correct = 0;
     let incorrect = 0;
     let half = 0;
     let totalTimeSec = 0;
 
-    data.forEach(question => {
+    newData.forEach(question => {
         if (question.emoji === '✅') correct++;
         else if (question.emoji === '❌') incorrect++;
         else if (question.emoji === '☑️') half++;
@@ -120,7 +134,7 @@ export function getStatsSummary(data: Question[]) {
         precision: `${precision}%`,
         averageTime: formatSecondsToTime(averageTimeSec),
         totalTime: formatSecondsToHour(totalTimeSec),
-        streak: getStreak(data) /* still placeholder */
+        streak: getStreak(data)
     }
 }
 

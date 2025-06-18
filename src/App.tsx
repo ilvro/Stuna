@@ -16,7 +16,8 @@ function App() {
         .then(data => setData(data));
     }, []);
 
-    const summary = useMemo(() => getStatsSummary(data), [data]);
+    let range = 30;
+    const summary = useMemo(() => getStatsSummary(data, range), [data]);
     getStreak(data)
 
   return (
@@ -51,7 +52,7 @@ function App() {
                 </div>
                 
 
-                <GraphAnalysis data={data} range={30}/>
+                <GraphAnalysis data={data} range={range}/>
                     
                 <h1 className="font-bold mb-4">Questions</h1>
                 <div className="space-y-4">
