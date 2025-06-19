@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen } from 'lucide-react';
+import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen, Sun, MoonIcon, Moon } from 'lucide-react';
 import { getStatsSummary, getStreak } from '../components/utilities/analysisUtils.tsx'
 import BarAnalysis from "../components/graphs/BarChartAnalysis.tsx";
 import AreaChartAnalysis from "../components/graphs/AreaChartAnalysis.tsx";
@@ -9,8 +9,14 @@ import StatCard from '../components/StatCards.tsx';
 import Question from "../types/types.tsx";
 
 function App() {
+    const [isDark, setIsDark] = useState(true); // dark/light mode management
     const [data, setData] = useState<Question[]>([]);
-    const [previewImage, setPreviewImage] = useState<string | null>(null);
+    const [previewImage, setPreviewImage] = useState<string | null>(null); // for question cards
+
+    const toggleTheme = () => {
+        setIsDark(!isDark);
+        document.documentElement.classList.toggle('dark');
+    }
 
     useEffect(() => {
         fetch(import.meta.env.VITE_API_URL + '/questions')
@@ -23,14 +29,42 @@ function App() {
     getStreak(data)
 
   return (
-
         <div>
             <nav className="flex items-center shadow-lg h-14 mb-10 space-x-8 px-12" id="main-nav-bar">
                 <a className="">Stuna</a>
                 <a>Guide</a>
                 <a>History</a>{/*show monthly report, streak)*/}
                 <a>Analysis</a>{/*proportional analysis: in month 1 the correct over total proportion was 35%, the next month it would show 47%, showing the progress over time. this would be an area chart. this month analysis, last 3 months analysis, year analysis, radar charts showing the fields of study in which you are strongest and the ones in which you are the weakest (using proportion again)*/}
-                <a className="flex ml-auto" href="https://github.com/ilvro/Stuna" target='_blank'>GitHub</a>
+                
+                <div className="flex items-center space-x-4 ml-auto"> {/* dark mode button */}
+                    <button 
+                        onClick={toggleTheme}
+                        className={`relative p-2 rounded-lg transition-all duration-300 ease-in-out
+                        ${isDark
+                            ? 'hover:bg-gray-700 text-yellow-400 hover:text-yellow-300'
+                            : 'hover:bg-gray-100 text-gray-600 hover:text-gray-500'
+                        }
+                        group overflow-hidden
+                    `}
+                    >
+                    
+                        {/* current theme icon (deactivates when hovering)*/}
+                        <div className="transition-all duration-300 ease-in-out group-hover:rotate-180 group-hover:opacity-0">
+                            {isDark ? <MoonIcon size={18}></MoonIcon> : <Sun size={18}></Sun>}
+                        </div>
+
+                        {/* opposite theme icon (activates when hovering)*/}
+                        <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out scale-0 rotate-180 opacity-0 group-hover:scale-100 group-hover:rotate-0 group-hover:opacity-100">
+                            {isDark ? <Sun size={18} /> : <MoonIcon size={18} />}
+                        </div>
+
+
+
+                    </button>
+                    <a className="flex" href="https://github.com/ilvro/Stuna" target='_blank'>GitHub</a>
+                </div>
+
+                
             </nav>
 
 
