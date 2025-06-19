@@ -1,4 +1,4 @@
-import { getCalendarDay, getWeekDay, getDate } from './formatDate'
+import { getCalendarDay, getWeekDay } from './formatDate'
 import Question from '../../types/types.tsx'
 
 const checkQuestion = (question: Question) => {
