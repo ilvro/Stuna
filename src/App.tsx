@@ -1,7 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen } from 'lucide-react';
 import { getStatsSummary, getStreak } from '../components/utilities/analysisUtils.tsx'
-import GraphAnalysis from "../components/BarChartAnalysis.tsx";
+import BarAnalysis from "../components/graphs/BarChartAnalysis.tsx";
+import AreaChartAnalysis from "../components/graphs/AreaChartAnalysis.tsx";
+
 import QuestionCard from "../components/QuestionCards.tsx";
 import StatCard from '../components/StatCards.tsx';
 import Question from "../types/types.tsx";
@@ -52,7 +54,8 @@ function App() {
                 </div>
                 
 
-                <GraphAnalysis data={data} range={range}/>
+                <BarAnalysis data={data} range={range}/>
+                <AreaChartAnalysis data={data} range={range}/>
                     
                 <h1 className="font-bold mb-4">Questions</h1>
                 <div className="space-y-4">
