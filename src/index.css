@@ -31,10 +31,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* light mode root styles */
+:root:not(.dark) {
+    color: #213547;
+    background-color: #f9fafb;
+}
+
 a {
     font-weight: 500;
     color: gray;
     text-decoration: inherit;
+    transition: color 0.2s ease;
 }
 a:hover {
     cursor: pointer;
@@ -45,6 +53,7 @@ body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1 {
@@ -65,20 +74,18 @@ button {
     font-family: inherit;
     background-color: #1a1a1a;
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: border-color 0.25s, background-color 0.2s ease;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
+/* light mode button styles */
+:root:not(.dark) button {
+    background-color: #f9f9f9;
+    color: #213547;
+}
+
+/* light mode link hover */
+:root:not(.dark) a:hover {
+    color: #747bff;
 }
 
 #main-nav-bar a {
@@ -86,6 +93,7 @@ button {
     display: flex;
     align-items: center;
     position: relative;
+    transition: color 0.2s ease;
 }
 
 #main-nav-bar a::after {
