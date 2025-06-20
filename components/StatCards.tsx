@@ -1,20 +1,20 @@
-interface Props {
+interface StatCardProps {
     icon: React.ReactNode;
     title: string;
     stat: number | string;
     isDark: boolean;
 }
 
-export default function StatCard({icon, title, stat, isDark}: Props) {
+export default function StatCard({icon, title, stat, isDark}: StatCardProps) {
     return (
-        <div className={`border rounded-xl pl-4 shadow-lg flex items-start justify-between transition-colors duration-200 ${isDark ? 'border-white/30 bg-transparent' : 'border-gray-300 bg-white'}`}>
-            <div>
-                <div className="text-sm pt-2">{icon}</div>
-                <h2 className={`text-xs pt-1 pb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{title}</h2>
+        <div className={`group border rounded-md p-2 shadow-xs transition-all duration-300 hover:scale-[1.01] ${isDark ? 'border-white/20' : 'border-gray-200 bg-white hover:bg-gray-50'}`}>
+            <div className="flex items-center justify-between mb-1">
+                    <div className="pl-2">
+                        {icon}
+                    </div>
+                <div className={`text-lg pr-2 font-medium ${isDark ? 'text-white' : 'text-gray-600'}`}>{stat}</div>
             </div>
-            <div>
-                <h2 className={`px-4 mt-2 text-sm ${isDark ? 'text-blue-50' : 'text-gray-900'}`}>{stat}</h2>
-            </div>
+            <h3 className={`text-xs pl-2 font-medium ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{title}</h3>
         </div>
-    )
+    );
 }

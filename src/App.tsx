@@ -18,7 +18,7 @@ function App() {
     }
 
     useEffect(() => {
-        // initialize theme on load and apply changes
+        // initialize theme on load
         if (isDark) {
             document.documentElement.classList.add('dark');
         } else {
@@ -38,7 +38,7 @@ function App() {
 
   return (
         <div className={`min-h-screen transition-colors duration-200 ${isDark ? 'bg-[#101115]' : 'bg-gray-50'}`}>
-            <nav className={`flex items-center shadow-lg h-14 mb-10 space-x-8 px-12 border-b transition-colors duration-200 ${isDark ? 'bg-[#101115] border-white/30' : 'bg-white border-gray-200'}`} id="main-nav-bar">
+            <nav className={`flex items-center shadow-sm h-14 mb-10 space-x-8 px-12 border-b transition-colors duration-200 ${isDark ? 'bg-[#101115] border-white/30' : 'bg-white border-gray-200'}`} id="main-nav-bar">
                 <a className={isDark ? 'text-white' : 'text-gray-900'}>Stuna</a>
                 <a className={isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'}>Guide</a>
                 <a className={isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'}>History</a>{/*show monthly report, streak)*/}
@@ -82,13 +82,13 @@ function App() {
                     <h2 className={`mt-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Track your studies with data analysis</h2>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4 mb-12" id="stat-cards">
-                    <StatCard icon={<Target className="text-blue-600" />} title='Total Questions' stat={summary.totalQuestions} isDark={isDark}></StatCard>
-                    <StatCard icon={<BadgeCheck className="text-green-600" />} title='Correct Questions' stat={summary.correct + summary.half/2} isDark={isDark}></StatCard>
-                    <StatCard icon={<Zap className="text-orange-500" />} title='Precision' stat={summary.precision} isDark={isDark}></StatCard>
-                    <StatCard icon={<Clock className="text-blue-500" />} title='Average Time' stat={summary.averageTime} isDark={isDark}></StatCard>
-                    <StatCard icon={<BrainCircuit className="text-indigo-600" />} title='Total Time' stat={summary.totalTime} isDark={isDark}></StatCard>
-                    <StatCard icon={<BookOpen className={isDark ? 'text-black' : 'text-gray-700'} />} title='Streak' stat={summary.streak} isDark={isDark}></StatCard>
+                <div className="grid grid-cols-3 gap-4 mb-12" id="stat-cards">
+                    <StatCard icon={<Target size={30} className="text-blue-600" />} title='Total Questions' stat={summary.totalQuestions} isDark={isDark}></StatCard>
+                    <StatCard icon={<BadgeCheck size={30} className="text-green-600" />} title='Correct Questions' stat={summary.correct + summary.half/2} isDark={isDark}></StatCard>
+                    <StatCard icon={<Zap size={30} className="text-orange-500" />} title='Precision' stat={summary.precision} isDark={isDark}></StatCard>
+                    <StatCard icon={<Clock size={30} className="text-blue-500" />} title='Average Time' stat={summary.averageTime} isDark={isDark}></StatCard>
+                    <StatCard icon={<BrainCircuit size={30} className="text-indigo-600" />} title='Total Time' stat={summary.totalTime} isDark={isDark}></StatCard>
+                    <StatCard icon={<BookOpen size={30} className={isDark ? 'text-black' : 'text-gray-700'} />} title='Streak' stat={summary.streak} isDark={isDark}></StatCard>
                 </div>
                 
 
