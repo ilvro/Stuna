@@ -32,7 +32,7 @@ function App() {
         .then(data => setData(data));
     }, []);
 
-    let range = 30;
+    let range = 7;
     const summary = useMemo(() => getStatsSummary(data, range), [data]);
     getStreak(data)
 
@@ -83,12 +83,12 @@ function App() {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 mb-12" id="stat-cards">
-                    <StatCard icon={<Target size={30} className="text-blue-600" />} title='Total Questions' stat={summary.totalQuestions} isDark={isDark}></StatCard>
-                    <StatCard icon={<BadgeCheck size={30} className="text-green-600" />} title='Correct Questions' stat={summary.correct + summary.half/2} isDark={isDark}></StatCard>
-                    <StatCard icon={<Zap size={30} className="text-orange-500" />} title='Precision' stat={summary.precision} isDark={isDark}></StatCard>
-                    <StatCard icon={<Clock size={30} className="text-blue-500" />} title='Average Time' stat={summary.averageTime} isDark={isDark}></StatCard>
-                    <StatCard icon={<BrainCircuit size={30} className="text-indigo-600" />} title='Total Time' stat={summary.totalTime} isDark={isDark}></StatCard>
-                    <StatCard icon={<BookOpen size={30} className={isDark ? 'text-black' : 'text-gray-700'} />} title='Streak' stat={summary.streak} isDark={isDark}></StatCard>
+                    <StatCard icon={<Target size={26} className="text-blue-600" />} title='Total Questions' stat={summary.totalQuestions} isDark={isDark}></StatCard>
+                    <StatCard icon={<BadgeCheck size={26} className="text-green-600" />} title='Correct Questions' stat={summary.correct + summary.half/2} isDark={isDark}></StatCard>
+                    <StatCard icon={<Zap size={26} className="text-orange-500" />} title='Precision' stat={summary.precision} isDark={isDark}></StatCard>
+                    <StatCard icon={<Clock size={26} className="text-blue-500" />} title='Average Time' stat={summary.averageTime} isDark={isDark}></StatCard>
+                    <StatCard icon={<BrainCircuit size={26} className="text-indigo-600" />} title='Total Time' stat={summary.totalTime} isDark={isDark}></StatCard>
+                    <StatCard icon={<BookOpen size={26} className={isDark ? 'text-yellow-400' : 'text-gray-700'} />} title='Streak' stat={summary.streak} isDark={isDark}></StatCard>
                 </div>
                 
 
