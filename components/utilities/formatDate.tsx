@@ -23,7 +23,7 @@ export function getCalendarDay(dateString: string) {
 
 
 export function getWeekDay(dateString: string) {
-    return new Date(dateString).toLocaleDateString('en-CA', { weekday: 'long' });
+    return new Date(dateString).toLocaleDateString('en-CA', { weekday: 'long', timeZone: 'UTC' });
 }
 
 
