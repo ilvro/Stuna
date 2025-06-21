@@ -11,7 +11,9 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
 intents.members = True
+intents.messages = True
 intents.message_content = True
+intents.guilds = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 QUESTION_REGEX = re.compile(
@@ -133,6 +135,8 @@ async def import_questions(ctx, arg=None):
 async def on_message(message):
     if message.author.bot:
         return
+    
+    print('message was sent')
 
     match = QUESTION_REGEX.match(message.content)
     if match:
@@ -164,6 +168,57 @@ async def on_message(message):
             writer.writerow(header)
             writer.writerow(new_row)
             writer.writerows(existing_rows)
+
+
+    await bot.process_commands(message)
+
+@bot.event
+async def on_message_delete(message):
+    if message.author.bot:
+        return
+    
+    match = QUESTION_REGEX.match(message.content)
+    if match:
+        timestamp, emoji, info_block, comment = match.groups()
+        try:
+            parts = [part.strip() for part in info_block.split('-')]
+            test = parts[0]
+            question_number = parts[1]
+            field = parts[2]
+        except Exception as e:
+            print(f"Error parsing message: {e}")
+            return
+
+        image_url = None
+        if message.attachments:
+            image_url = message.attachments[0].url
+
+        formatted_msg = [message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url]
+        stringified_row = []
+        for item in formatted_msg:
+            if item is None:
+                stringified_row.append('')
+            else:
+                stringified_row.append(str(item))
+
+        comparison = ','.join(stringified_row)
+
+        print(comparison)
+
+        with open(CSV_FILE, mode='r', newline='', encoding='utf-8') as f:
+            rows = list(csv.reader(f))
+            header = rows[0]
+            data = rows[1:]
+
+        # get the csv but without the row to be deleted
+        filtered_data = [row for row in data if ','.join(row) != comparison]
+
+        # rewrite csv with the filtered row
+        with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(header)
+            writer.writerows(filtered_data)
+    
 
 
     await bot.process_commands(message)
