@@ -32,7 +32,7 @@ function App() {
         .then(data => setData(data));
     }, []);
 
-    let range = 7;
+    let range = 30;
     const summary = useMemo(() => getStatsSummary(data, range), [data]);
     getStreak(data)
 
