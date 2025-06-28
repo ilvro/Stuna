@@ -152,6 +152,9 @@ export function getStreak(data: Question[]) {
 
         let diffInMs = currentDate.getTime() - lastDate.getTime()
         let diffDays = diffInMs / (1000 * 60 * 60 * 24);
+
+        console.log(diffDays)
+
         if (diffDays === 1 || diffDays === null) { /* diff null would be the first day */
             streak += 1
             /* console.log('user has a streak of ' + streak + ' days (day ' + currentDate.getDate() + ' )')*/
@@ -160,5 +163,7 @@ export function getStreak(data: Question[]) {
             streak = 0; // diff in days is greater than 2, so the user lost the streak
         }
     }
+
+    if (streak != 0) {streak += 1} // i dont know. it doesnt count the current day for some reason
     return streak
 }
