@@ -1,12 +1,12 @@
 import Question from '../types/types.tsx'
 import { formatDate } from './utilities/formatDate.tsx'
-  
+
 interface Props {
     question: Question;
     setPreviewImage: (url: string) => void;
     isDark: boolean;
 }
-  
+
 export default function QuestionCard({ question, setPreviewImage, isDark }: Props) {
     const fields = question.field.split('/')
 
@@ -26,12 +26,12 @@ export default function QuestionCard({ question, setPreviewImage, isDark }: Prop
                 )}
             </div>
         </div>
-  
+
         {/* field cards, time card and comment*/}
         <div className={isDark ? 'text-white' : 'text-gray-900'}>
             <div className="flex gap-2">
-                {fields.map((field, index) => (
-                    <div key={index} className={`rounded-lg px-2 py-1 text-sm ${isDark ? 'bg-blue-900/50 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
+                {fields.map((field, i) => (
+                    <div key={i} className={`rounded-lg px-2 py-1 text-sm ${isDark ? 'bg-blue-900/50 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
                         {field}
                     </div>
                 ))}
