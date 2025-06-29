@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen, Sun, MoonIcon } from 'lucide-react';
 import { getStatsSummary, getStreak } from '../components/utilities/analysisUtils.tsx'
-import BarAnalysis from "../components/graphs/BarChartAnalysis.tsx";
 import AreaChartAnalysis from "../components/graphs/AreaChartAnalysis.tsx";
 
 import QuestionCard from "../components/QuestionCards.tsx";
