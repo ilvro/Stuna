@@ -8,6 +8,8 @@ interface Props {
 }
   
 export default function QuestionCard({ question, setPreviewImage, isDark }: Props) {
+    const fields = question.field.split('/')
+
     return (
       <div className={`relative border rounded-xl p-4 shadow-md duration-200 transition-all hover:scale-[1.01] ${isDark ? 'border-white/30 bg-transparent' : 'border-gray-300 bg-white'}`}>
         <div className="flex justify-between">
@@ -25,10 +27,20 @@ export default function QuestionCard({ question, setPreviewImage, isDark }: Prop
             </div>
         </div>
   
+        {/* field cards, time card and comment*/}
         <div className={isDark ? 'text-white' : 'text-gray-900'}>
-          <p className="my-1"><strong>Field:</strong> {question.field}</p>
-          <p className="my-1"><strong>Time:</strong> {question.timestamp}</p>
-          <p className={isDark ? 'text-gray-400' : 'text-gray-500'}> {question.comment}</p>
+            <div className="flex gap-2">
+                {fields.map((field, index) => (
+                    <div key={index} className={`rounded-lg px-2 py-1 text-sm ${isDark ? 'bg-blue-900/50 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
+                        {field}
+                    </div>
+                ))}
+            </div>
+
+            <div className={`inline-block rounded-lg px-2 py-1 text-sm my-2 ${isDark ? 'bg-gray-800/50 text-gray-300' : 'bg-gray-100 text-gray-700'}`}>
+                <strong>⏱️</strong> {question.timestamp}
+            </div>
+            <p className={isDark ? 'text-gray-400' : 'text-gray-500'}> {question.comment}</p>
         </div>
       </div>
     );
