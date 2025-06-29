@@ -91,8 +91,6 @@ function App() {
                     <StatCard icon={<BookOpen size={26} className={isDark ? 'text-yellow-400' : 'text-gray-700'} />} title='Streak' stat={summary.streak} isDark={isDark}></StatCard>
                 </div>
                 
-
-                <BarAnalysis data={data} range={range}/>
                 <AreaChartAnalysis data={data} range={range}/>
                     
                 <h1 className={`font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Questions</h1>
