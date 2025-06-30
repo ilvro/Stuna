@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Target, BadgeCheck, Zap, Clock, BrainCircuit, BookOpen, Sun, MoonIcon } from 'lucide-react';
+import { Target, BadgeCheck, Zap, Clock, BrainCircuit, Flame, Sun, MoonIcon } from 'lucide-react';
 import { getStatsSummary, getStreak } from '../components/utilities/analysisUtils.tsx'
 import AreaChartAnalysis from "../components/graphs/AreaChartAnalysis.tsx";
 
@@ -36,7 +36,7 @@ function App() {
     getStreak(data)
 
   return (
-        <div className={`min-h-screen transition-colors duration-200 ${isDark ? 'bg-[#101115]' : 'bg-gray-50'}`}>
+        <div className={`min-h-screen transition-colors duration-200 ${isDark ? 'bg-[#101115]' : 'bg-gray-60'}`}>
             <nav className={`flex items-center shadow-sm h-14 mb-10 space-x-8 px-12 border-b transition-colors duration-200 ${isDark ? 'bg-[#101115] border-white/30' : 'bg-white border-gray-200'}`} id="main-nav-bar">
                 <a className={isDark ? 'text-white' : 'text-gray-900'}>Stuna</a>
                 <a className={isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'}>Guide</a>
@@ -71,7 +71,7 @@ function App() {
             </nav>
 
 
-            <div className="px-100">
+            <div className="px-50">
                 {/* the graphs on the first page will be 
                     weekly report with correct/total (bar chart)
                 */}
@@ -87,10 +87,12 @@ function App() {
                     <StatCard icon={<Zap size={26} className="text-orange-500" />} title='Precision' stat={summary.precision} isDark={isDark}></StatCard>
                     <StatCard icon={<Clock size={26} className="text-blue-500" />} title='Average Time' stat={summary.averageTime} isDark={isDark}></StatCard>
                     <StatCard icon={<BrainCircuit size={26} className="text-indigo-600" />} title='Total Time' stat={summary.totalTime} isDark={isDark}></StatCard>
-                    <StatCard icon={<BookOpen size={26} className={isDark ? 'text-yellow-400' : 'text-gray-700'} />} title='Streak' stat={summary.streak} isDark={isDark}></StatCard>
+                    <StatCard icon={<Flame size={26} className="text-orange-400"/>} title='Streak' stat={summary.streak} isDark={isDark}></StatCard>
                 </div>
                 
-                <AreaChartAnalysis data={data} range={range}/>
+                <div className={`rounded-lg py-3 pt-6 mb-4 ${isDark ? 'bg-transparent' : `bg-white`} transition-all`}>
+                    <AreaChartAnalysis data={data} range={range}/>
+                </div>
                     
                 <h1 className={`font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Questions</h1>
                 <div className="space-y-4">
