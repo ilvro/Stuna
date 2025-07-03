@@ -36,7 +36,7 @@ class discordClient(discord.Client):
 
 @bot.command(name='import')
 async def import_questions(ctx, arg=None):
-    print('called import')  
+    print('importing questions')
     if arg is None:
         await ctx.send("⚠️ This will delete the current file and reimport all questions. Use `!import all` to reimport everything, `!import -7d` to reimport the last 7 days and `!import -2w` to reimport the last 2 weeks.")
         return
@@ -133,11 +133,10 @@ async def import_questions(ctx, arg=None):
 
 @bot.event
 async def on_message(message):
+    print('message sent')
     if message.author.bot:
         return
     
-    print('message was sent')
-
     match = QUESTION_REGEX.match(message.content)
     if match:
         timestamp, emoji, info_block, comment = match.groups()
@@ -174,6 +173,7 @@ async def on_message(message):
 
 @bot.event
 async def on_message_delete(message):
+    print('message deleted')
     if message.author.bot:
         return
     
@@ -219,9 +219,6 @@ async def on_message_delete(message):
             writer.writerow(header)
             writer.writerows(filtered_data)
     
-
-
-    await bot.process_commands(message)
 
 
 
