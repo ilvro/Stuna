@@ -1,3 +1,5 @@
+# https://discord.com/oauth2/authorize?client_id=1363613086413492355&permissions=125952&scope=bot
+
 import discord
 import os
 import re
@@ -5,6 +7,7 @@ import csv
 from discord.ext import commands
 from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
+from time import sleep
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -130,6 +133,9 @@ async def import_questions(ctx, arg=None):
             writer.writerows(csv_rows)
     
     await status_msg.edit(content=f"✅ Successfully imported {count} questions from {processed} messages.")
+    sleep(3)
+    await status_msg.delete()
+    await ctx.message.delete()
 
 @bot.event
 async def on_message(message):
