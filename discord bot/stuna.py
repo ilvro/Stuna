@@ -39,7 +39,6 @@ class discordClient(discord.Client):
 
 @bot.command(name='import')
 async def import_questions(ctx, arg=None):
-    print('importing questions')
     if arg is None:
         await ctx.send("⚠️ This will delete the current file and reimport all questions. Use `!import all` to reimport everything, `!import -7d` to reimport the last 7 days and `!import -2w` to reimport the last 2 weeks.")
         return
@@ -139,7 +138,6 @@ async def import_questions(ctx, arg=None):
 
 @bot.event
 async def on_message(message):
-    print('message sent')
     if message.author.bot:
         return
     
@@ -179,7 +177,6 @@ async def on_message(message):
 
 @bot.event
 async def on_message_delete(message):
-    print('message deleted')
     if message.author.bot:
         return
     
@@ -208,8 +205,6 @@ async def on_message_delete(message):
                 stringified_row.append(str(item))
 
         comparison = ','.join(stringified_row)
-
-        print(comparison)
 
         with open(CSV_FILE, mode='r', newline='', encoding='utf-8') as f:
             rows = list(csv.reader(f))
