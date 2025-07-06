@@ -15,7 +15,11 @@ function AreaChartAnalysis({ data, range }: AnalysisProps) {
     return (
         <ResponsiveContainer width="100%" height={300}>
             <AreaChart
-                data={processReport(data, range)} /* recharts automatically loops through every data item */
+                data={processReport(data, range).map(data => ({
+                    ...data,
+                    correct: data.correct + data.half
+                }))} /* for this chart, process half as correct */
+
                 margin={{
                     top: 5,
                     right: 30,
