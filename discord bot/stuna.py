@@ -4,6 +4,7 @@ import discord
 import os
 import re
 import csv
+import pytz
 from discord.ext import commands
 from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
@@ -11,6 +12,8 @@ from time import sleep
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+
+LOCAL_TIMEZONE = pytz.timezone('America/Sao_Paulo')
 
 intents = discord.Intents.default()
 intents.members = True
@@ -25,6 +28,9 @@ QUESTION_REGEX = re.compile(
 )
 
 CSV_FILE = 'questions.csv'
+
+def convert_to_local_time(utc_datetime):
+    return utc_datetime.replace(tzinfo=timezone.utc).astimezone(LOCAL_TIMEZONE)
 
 if not os.path.exists(CSV_FILE):
     with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as f:
@@ -111,8 +117,9 @@ async def import_questions(ctx, arg=None):
                 image_url = None
                 if message.attachments:
                     image_url = message.attachments[0].url
-                    
-                csv_rows.append([message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url])
+
+                local_time = convert_to_local_time(message.created_at)
+                csv_rows.append([local_time.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url])
                 count += 1
         
         # write batch to CSV
@@ -157,7 +164,8 @@ async def on_message(message):
         if message.attachments:
             image_url = message.attachments[0].url
 
-        new_row = [message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url]
+        local_time = convert_to_local_time(message.created_at)
+        new_row = [local_time.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url]
 
         # read all current rows
         with open(CSV_FILE, mode='r', newline='', encoding='utf-8') as f:
@@ -196,7 +204,8 @@ async def on_message_delete(message):
         if message.attachments:
             image_url = message.attachments[0].url
 
-        formatted_msg = [message.created_at.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url]
+        local_time = convert_to_local_time(message.created_at)
+        formatted_msg = [local_time.isoformat(), timestamp, emoji, test, question_number, field, comment, image_url]
         stringified_row = []
         for item in formatted_msg:
             if item is None:
