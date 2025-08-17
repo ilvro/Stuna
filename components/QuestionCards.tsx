@@ -11,7 +11,7 @@ export default function QuestionCard({ question, setPreviewImage, isDark }: Prop
     const fields = question.field.split('/')
 
     return (
-      <div className={`relative border rounded-xl p-4 shadow-md duration-200 transition-all hover:scale-[1.01] ${isDark ? 'border-white/30 bg-transparent' : 'border-gray-300 bg-white'}`}>
+      <div className={`relative border rounded-xl p-4 shadow-md transition-all hover:scale-[1.01] ${isDark ? 'border-white/30 bg-transparent' : 'border-gray-300 bg-white'}`}>
         <div className="flex justify-between">
             <div className={`text-[1.1rem] mb-2 flex items-center gap-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 <span className="text-[1.4rem]">{question.emoji}</span>
