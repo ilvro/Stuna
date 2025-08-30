@@ -139,6 +139,7 @@ export function getStatsSummary(data: Question[], range: number) {
 }
 
 export function getStreak(data: Question[]) {
+    let freezes = 0; /* every 20 days get a streak freeze with a maximum of 2 */
     let streak = 0;
     let lastDate: Date;
     let currentDate: Date;
@@ -158,9 +159,17 @@ export function getStreak(data: Question[]) {
         if (diffDays === 1 || diffDays === null) { /* diff null would be the first day */
             streak += 1
             /* console.log('user has a streak of ' + streak + ' days (day ' + currentDate.getDate() + ' )')*/
+            if (streak % 20 == 0 && freezes < 2) {
+                freezes++
+            }
         }
         else {
-            streak = 0; // diff in days is greater than 2, so the user lost the streak
+            if (freezes == 0) {
+                streak = 0; // diff in days is greater than 2, so the user lost the streak
+            }
+            else {
+                freezes--;
+            }
         }
     }
 
