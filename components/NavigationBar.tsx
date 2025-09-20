@@ -19,7 +19,7 @@ function NavigationBar({ isDark, toggleTheme }: NavigationBarProps) {
     };
 
     return (
-        <nav className={`flex items-center h-14 mb-10 space-x-8 px-12 border-b transition-colors duration-300 ${isDark ? 'bg-[#101113] border-[#0b0c0e] shadow-lg' : 'bg-gray-50 border-gray-200 shadow-md'}`} id="main-nav-bar">
+        <nav className={`flex items-center h-14 mb-10 space-x-8 px-12 border-b transition-colors duration-300 ${isDark ? 'bg-[#101113] border-[#0b0c0e] shadow-lg' : 'bg-gray-50 border-gray-200 shadow-2xs'}`} id="main-nav-bar">
             <Link to="/" className={`transition-colors duration-300 ${isDark ? 'text-white' : 'text-gray-900'}`}>Stuna</Link>
             <Link to="/analysis" className={getLinkClass('/analysis')}>Analysis</Link>
             <Link to="/guide" className={getLinkClass('/guide')}>Guide</Link>
@@ -46,8 +46,8 @@ function NavigationBar({ isDark, toggleTheme }: NavigationBarProps) {
                     </div>
                 </button>
                 
-                <a className={`flex transition-colors duration-300 ${isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'}`} href="https://github.com/ilvro/Stuna" target='_blank'>GitHub</a>
             </div>
+            <a className={`flex transition-colors duration-300 ${isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'}`} href="https://github.com/ilvro/Stuna" target='_blank'>GitHub</a>
         </nav>
     );
 }
