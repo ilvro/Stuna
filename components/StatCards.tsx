@@ -7,7 +7,7 @@ interface StatCardProps {
     isDark: boolean;
 }
 
-/* add trends */
+/* add trends */ 
 export default function StatCard({icon: Icon, color, background, title, stat, isDark}: StatCardProps) {
     return (
         <div className={`group border rounded-lg p-2 shadow-xs transition-all hover:scale-[1.01] ${isDark ? 'border-white/20' : 'border-gray-200 bg-white hover:bg-gray-50'}`}>

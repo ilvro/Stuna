@@ -176,3 +176,28 @@ export function getStreak(data: Question[]) {
     if (streak != 0) {streak += 1} // i dont know. it doesnt count the current day for some reason
     return streak
 }
+
+export function getTestData(data: any) {
+    // correct questions
+    // incorrect questions
+    // total time spent
+    // average time per question
+
+    let correct: number = 0;
+    let incorrect: number = 0;
+    let timestamp: number = 0;
+    let avgTime: number = 0;
+
+    for (let key in data) {
+        let question = data[key]
+
+        if (question.emoji === '✅' || (question.emoji === '☑️')) correct++;
+        else if (question.emoji === '❌') incorrect++;
+
+        timestamp = timestamp + parseTimeStamp(question.timestamp)
+    }
+
+    avgTime = Math.round(timestamp/(correct + incorrect));
+    
+    return [correct, incorrect, timestamp, avgTime]
+}
